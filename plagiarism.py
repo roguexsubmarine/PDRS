@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 
-# from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -41,20 +41,22 @@ def calculate_similarity(p):
             except UnicodeDecodeError:
                 print(f"UnicodeDecodeError: Unable to decode '{filename}'")
 
-    # vectorizer = TfidfVectorizer()
+    cvectorizer = CountVectorizer()
     vectorizer = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
 
     vectorizer.fit(lst)
+    cvectorizer.fit(lst)
 
     #comment this out l8r
     # print("Vocabulary: ", vectorizer.vocabulary_)
 
     #sm
     vector = vectorizer.transform(lst)
+    cvector = cvectorizer.transform(lst)
 
     #sparse matrix to df and dict
     df = pd.DataFrame(vector.toarray(), columns=vectorizer.get_feature_names_out(), index=file_names)
-    
+    cdf = pd.DataFrame(cvector.toarray(), columns=cvectorizer.get_feature_names_out(), index=file_names)
     unique_words_count = []
 
     for _, row in df.iterrows():
@@ -69,6 +71,7 @@ def calculate_similarity(p):
     print("Encoded Document is:",file_name)
 
     df.to_csv(file_name)
+    cdf.to_csv('countmatrix.csv')
 
     from sklearn.metrics.pairwise import cosine_similarity
 
@@ -108,6 +111,21 @@ def calculate_similarity(p):
         i, j, similarity_score = pair
         similarity_matrix[i, j] = similarity_score
         similarity_matrix[j, i] = similarity_score
+        
+    #top 50 words barplot
+    frequency_df = pd.DataFrame(cdf.sum(), columns=['Frequency'])
+    frequency_df = frequency_df.sort_values(by='Frequency', ascending=False)
+
+    top = frequency_df.head(50)
+    top.plot(kind='bar')
+    plt.title('Top 50 Words by Frequency')
+    plt.xlabel('Word')
+    plt.ylabel('Frequency')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    output_filename = "./static/top50words.png"
+    plt.savefig(output_filename, format="png")
+    plt.close() 
 
 
     import networkx as nx
@@ -125,7 +143,7 @@ def calculate_similarity(p):
             similarity = similarity_matrix[i][j]
             if similarity > 0.1:
                 G.add_edge(i, j, weight=similarity, label=f'{1 - similarity:.2f}')
-    #matrix of similarity scores
+                
     n = len(index)
     pos = nx.spring_layout(G, center=[0.5,0.5],k=0.3,scale=15)
     nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=250, font_size=6, font_color='black',
