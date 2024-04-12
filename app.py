@@ -31,6 +31,17 @@ def after_request(response):
 def index():
     return redirect('/home')
 
+@app.route("/adduser", methods=['GET', 'POST'])
+def adduser():
+    print("in adduser")
+    username = request.form['name']
+    email = request.form['email']
+    password = generate_password_hash(request.form['password'])
+    cpassword = generate_password_hash(request.form['cpassword'])
+    if check_password_hash(password, cpassword):
+        print("pass same")
+        return render_template('home.html', error="Passwords do not match")
+    return render_template("login.html")
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -38,6 +49,27 @@ def login():
         return render_template("login.html")
     # if request.method == 'POST':
 
+@app.route("/authenticate", methods=['POST'])
+def authenticate():
+    print("in authenticate")
+    if request.method == 'POST':
+        print("in authenticate post")
+        username = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        cpassword = request.form['cpassword']
+        
+        conn = sqlite3.connect('users.db')
+
+        return redirect('/home')
+    else:
+        print("in authenticate get")
+        return render_template("login.html")
+
+@app.route("/register", methods=['GET','POST'])
+def register():
+    print("in register")
+    return render_template("register.html")
 
 def clear_submissions_directory():
     submissions_folder = os.path.join(os.getcwd(), 'submissions')

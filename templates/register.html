@@ -1,17 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h2 class="page-head">Login</h2>
+<h2 class="page-head">Register</h2>
 
         <img src="../static/login.jpg" alt="login image" class="head-animation">
 
-        <form action="{{ url_for('authenticate') }}" method="POST" class="file_form">
+        <form action="{{ url_for('adduser') }}" method="POST" class="file_form">
             <input type="text" name="name" id="name" class="form-control" placeholder="Name">
             <input type="email" name="email" id="email" class="form-control" placeholder="Email-id">
             <input type="password" name="password" id="password" class="form-control" placeholder="Password">
             <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password">
             <input type="submit" name="submit" id="submit" value="Login" class="form-control btn btn-primary">
         </form>
-        Don't have an account?
-        <a href="/register">Create one</a>
 {% endblock content %}
