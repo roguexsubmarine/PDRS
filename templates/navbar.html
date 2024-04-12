@@ -1,0 +1,41 @@
+{% block navbar %}
+
+ <!-- start navbar -->
+ <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-text" href="/">Plagiarism-Detector</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="/login">Educator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-text" href="/result">Results</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <style>
+    nav{
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #6495ED;
+        background-image: linear-gradient( 135deg, #9708CC 10%, #43CBFF 100%);
+    }
+
+    .nav-text{
+        color: aliceblue;
+    }
+  </style>
+<!-- end navbar -->
+
+{% endblock navbar %}
