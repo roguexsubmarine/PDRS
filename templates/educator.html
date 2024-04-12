@@ -9,8 +9,8 @@
         <p>
             Quick and easy plagiarism detection for a wide range of programming languages.
         </p>
-        <form action="" method="POST" class="file_form">
-            <input type="file" name="file_input" id="file_input" class="form-control" placeholder="upload a file (*.zip)" required>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('extract') }}" class="file_form">
+            <input type="file" name="file" id="file" accept=".zip" class="form-control" placeholder="upload a file (*.zip)" required>
             <input type="text" name="analysis_name" id="analysis_name" class="form-control" placeholder="Analysis Name" required>
 
             <label for="prog_lang">Programming Language :</label>
