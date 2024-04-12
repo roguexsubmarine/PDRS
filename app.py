@@ -128,7 +128,7 @@ def extract():
 
 @app.route("/result")
 def result():
-    return render_template("result.html")
+    return render_template("heatmap.html")
 
 
 @app.route("/home")
