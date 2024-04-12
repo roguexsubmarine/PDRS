@@ -58,26 +58,26 @@
           </tr>
         </thead>
         <tbody id="tableBody">
-          {% for i in data %}
-          <tr>
-
-            <th scope="row">{{ loop.index }}</th>
-            <td class="tcell">
-              <form action="{{ url_for('single_comparison') }}", method="POST">
-                <input type="text" name="student" id="student" value="{{ i[0] }}" hidden>
-                <input type="submit" value="{{ i[0] }}" class="btn btn-outline-dark">
-              </form> 
-            </td>
-
-            <td class="tcell">
-              <form action="{{ url_for('single_comparison') }}", method="POST">
-                <input type="text" name="student" id="student" value="{{ i[1] }}" hidden>
-                <input type="submit" value="{{ i[1] }}" class="btn btn-outline-dark">
-              </form> 
-            </td>
-            <td class="percentage">{{ i[2] }}</td>
-          </tr>
-          {% endfor %}
+            {% for i in data %}
+            <tr>
+  
+              <th scope="row">{{ loop.index }}</th>
+              <td class="tcell">
+                <form action="{{ url_for('single_comparison') }}", method="POST">
+                  <input type="text" name="student" id="student" value="{{ i[0] }}" hidden>
+                  <input type="submit" value="{{ i[0] }}" class="btn btn-outline-dark">
+                </form> 
+              </td>
+  
+              <td class="tcell">
+                <form action="{{ url_for('single_comparison') }}", method="POST">
+                  <input type="text" name="student" id="student" value="{{ i[1] }}" hidden>
+                  <input type="submit" value="{{ i[1] }}" class="btn btn-outline-dark">
+                </form> 
+              </td>
+              <td class="percentage">{{ i[2] }}</td>
+            </tr>
+            {% endfor %}
 
 
         </tbody>

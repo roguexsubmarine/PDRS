@@ -128,28 +128,38 @@ def calculate_similarity(p):
     plt.close() 
 
 
-    #clustermatrix
     import networkx as nx
+    from matplotlib.patches import Rectangle
 
     G = nx.Graph()
+
+    for i in range(len(similarity_matrix)):
+        G.add_node(i)
+
+
+
     for i in range(len(similarity_matrix)):
         for j in range(i + 1, len(similarity_matrix[i])):
             similarity = similarity_matrix[i][j]
-            if similarity > 0.2:
+            if similarity > 0.1:
                 G.add_edge(i, j, weight=similarity, label=f'{1 - similarity:.2f}')
                 
     n = len(index)
-    pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, font_size=1, font_color='black',
+    pos = nx.spring_layout(G, center=[0.5,0.5],k=0.3,scale=15)
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=250, font_size=6, font_color='black',
             edge_color='gray', width=2)
     edge_labels = nx.get_edge_attributes(G, 'label')
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='black')
-
-    plt.title('Cluster Map')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=4,font_color='black')
+    # Create a border around the plot
+    border = Rectangle((plt.xlim()[0], plt.ylim()[0]), plt.xlim()[1] - plt.xlim()[0], plt.ylim()[1] - plt.ylim()[0],
+                    edgecolor='black', linewidth=2, facecolor='none')
+    plt.gca().add_patch(border)
+        #plt.axis('on')  # Show axes
+    plt.title('Graph of Cosine Similarity')
     output_filename = "./static/clustermap.png"
     plt.savefig(output_filename, format="png")
-    # plt.show()
 
+    # plt.show()
     #matrix of similarity scores
     n = len(index)
     similarity_matrix = np.zeros((n, n))
