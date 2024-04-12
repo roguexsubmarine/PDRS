@@ -8,6 +8,10 @@ import random
 
 app = Flask(__name__)
 
+if __name__ == '__main__':
+    app.run()
+
+
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
@@ -29,7 +33,8 @@ def index():
 def login():
     if request.method == 'GET':
         return render_template("login.html")
-    # if request.method == 'POST':
+    if request.method == 'POST':
+
 
 
 @app.route("/result")

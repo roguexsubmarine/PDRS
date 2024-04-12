@@ -3,7 +3,6 @@
 
 Plagiarism Detection and Reporting System
 
-
 ## Installation
 
 ```bash
@@ -15,4 +14,15 @@ pip install -r requirements.txt
 export FLASK_APP=app.py
 flask run
 ```
+
+## Details
+
+Abhijeet Jadhav
+Kapil Tangsali
+Aaryan Tokekar
+Tanmayi Sulakhe
+Yash Pawar
+Soham Vaze
+
+
     
