@@ -39,7 +39,6 @@ def login():
     # if request.method == 'POST':
 
 
-
 def clear_submissions_directory():
     submissions_folder = os.path.join(os.getcwd(), 'submissions')
     for filename in os.listdir(submissions_folder):
@@ -51,7 +50,6 @@ def clear_submissions_directory():
                 shutil.rmtree(file_path)
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
-
 
 @app.route("/extract", methods=['GET', 'POST'])
 def extract():
@@ -67,20 +65,21 @@ def extract():
         if file:
             # Check if the file is a ZIP file
             if file.filename.endswith('.zip'):
+                # Check if the 'submissions' directory exists, if not, create it
+                submissions_folder = os.path.join(os.getcwd(), 'submissions')
+                if not os.path.exists(submissions_folder):
+                    os.makedirs(submissions_folder, exist_ok=True)
+
                 # Clear the submissions directory first
                 clear_submissions_directory()
 
-                # Create a directory called 'submissions' in the parent folder
-                upload_folder = os.path.join(os.getcwd(), 'submissions')
-                os.makedirs(upload_folder, exist_ok=True)
-
-                # Save the ZIP file to the upload folder
-                zip_path = os.path.join(upload_folder, file.filename)
+                # Save the ZIP file to the submissions folder
+                zip_path = os.path.join(submissions_folder, file.filename)
                 file.save(zip_path)
 
                 # Extract the contents of the ZIP file
                 with ZipFile(zip_path, 'r') as zip_ref:
-                    zip_ref.extractall(upload_folder)
+                    zip_ref.extractall(submissions_folder)
 
                 # Optionally, you can delete the uploaded ZIP file
                 os.remove(zip_path)
