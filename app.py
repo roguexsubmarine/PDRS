@@ -17,7 +17,9 @@ if __name__ == '__main__':
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config['SECRET_KEY'] = 'your_secret_key'
 Session(app)
+
 
 @app.after_request
 def after_request(response):
@@ -125,8 +127,14 @@ def extract():
             print(zip_path)
             p = zip_path.replace('.zip', '')
             print(p)
-            calculate_similarity(p)
+            data = calculate_similarity(p)
+
+            sorted_data = sorted(data, key=lambda x: x[2])
+            sorted_data = sorted_data[::-1]
+            session['sorted_data'] = sorted_data
+
             return redirect("/result")
+            
 
         else:
             return "Uploaded file is not a ZIP file."
@@ -136,11 +144,18 @@ def extract():
 
 @app.route("/result")
 def result():
+    data = session.get('sorted_data', None)
+
+    if data is None:
+        return "Data not found. Please sort first."
+    # print(data)
     return redirect("/list")
 
 @app.route("/list")
 def list():
-    return render_template("list.html")
+    data = session.get('sorted_data', None)
+    print("\n\n\nqwerty",data[0])
+    return render_template("list.html", data=data)
 
 @app.route("/heatmap")
 def heatmap():

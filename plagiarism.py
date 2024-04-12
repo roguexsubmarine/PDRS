@@ -92,7 +92,7 @@ def calculate_similarity(p):
     for pair in similarities:
         index1 = df.index[pair[0]]
         index2 = df.index[pair[1]]
-        similarity_score = pair[2]
+        similarity_score = pair[2] 
         # print(f"Similarity between vectors {index1} and {index2}: {similarity_score}")
         simlist.append([index1,index2,similarity_score])
         
