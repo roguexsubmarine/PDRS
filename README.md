@@ -15,4 +15,12 @@ pip install -r requirements.txt
 export FLASK_APP=app.py
 flask run
 ```
-    
+
+## Team
+
+Abhijeet Jadhav
+Kapil Tangsali
+Aaryan Tokekar
+Yash Pawar
+Tanmayi Sulakhe
+Soham Vaze
