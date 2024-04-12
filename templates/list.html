@@ -1,0 +1,71 @@
+{% extends 'result.html' %}
+  
+  {% block content %}
+
+
+    <h2 class="page-head">Results</h2>
+
+    <img src="../static/analysis.jpg" alt="analysis image" class="head-animation" style="max-width: 300px; max-height: 300px;">
+
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="/list">Detailed</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/heatmap">Heat Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/cluster">Cluster</a>
+        </li>
+    </ul>
+
+    <style>
+        .table{
+            font-size:smaller;
+            width: 90vw;
+            max-width: 750px;
+            overflow-x: scroll;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            max-width: 100px;
+        }
+
+
+    </style>
+
+    <div class="result-content">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Submission 1</th>
+            <th scope="col">Submission 2</th>
+            <th scope="col">Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td class="tcell">Maqqqqqqrk</td>
+            <td class="tcell">Osdfgfgtto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+
+        </tbody>
+      </table>
+    
+    </div>
+
+ {% endblock content %}
