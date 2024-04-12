@@ -1,117 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+{% extends 'layout.html' %}
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <style>
-        body{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: larger;
+{% block content %}
+<h2 class="page-head">Login</h2>
 
-        }
-
-        .page-content{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 95%;
-            max-width: 650px;
-            min-height: 100vh;
-        }
-
-
-        .file_form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .page-head{
-            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-
-        .head-animation{
-            width: 100%;
-            height: 100%;
-            max-height: 400px;
-            max-width: 400px;
-            aspect-ratio: auto;
-        }
-
-        .form-control{
-            max-width: 500px;
-        }
-    </style>
-
-</head>
-<body>
-
-    <!-- start navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand nav-text" href="/">Plagarism-Detector</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link nav-text" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-text" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-text" href="#">Pricing</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-      <style>
-        nav{
-            width: 100%;
-            margin-bottom: 10px;
-            background-color: #6495ED;
-            background-image: linear-gradient( 135deg, #9708CC 10%, #43CBFF 100%);
-        }
-
-        .nav-text{
-            color: aliceblue;
-        }
-      </style>
-    <!-- end navbar -->
-
-
-    <div class="page-content">
-        <h2 class="page-head">Login</h2>
-
-        <img src="../animations/login.jpg" alt="login image" class="head-animation">
+        <img src="../static/login.jpg" alt="login image" class="head-animation">
 
         <form action="{{ url_for('login') }}" method="POST" class="file_form">
             <input type="text" name="name" id="name" class="form-control" placeholder="Name">
             <input type="password" name="password" id="password" class="form-control" placeholder="Password">
             <input type="submit" name="submit" id="submit" value="Login" class="form-control btn btn-primary">
         </form>
-        
-    </div>
-
-
-</body>
-</html>
+{% endblock content %}

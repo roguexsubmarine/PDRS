@@ -2,18 +2,15 @@ import os
 
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
+import sqlite3
 from werkzeug.security import check_password_hash, generate_password_hash
-
-
 import random
-
 
 app = Flask(__name__)
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-
 
 @app.after_request
 def after_request(response):
@@ -26,11 +23,14 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return redirect('/home')
 
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    if request.method == 'GET':
+        return render_template("login.html")
+    # if request.method == 'POST':
+
 
 @app.route("/result")
 def result():
