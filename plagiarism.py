@@ -53,10 +53,15 @@ def calculate_similarity(directory_path):
 
     #sparse matrix to df and dict
     df = pd.DataFrame(vector.toarray(), columns=vectorizer.get_feature_names_out(), index=file_names)
-    vectordc={}
-    for index, values in df.iterrows():
-        vectordc[index] = values.tolist()
+    
+    unique_words_count = []
 
+    for _, row in df.iterrows():
+        unique_word_count = sum(1 for value in row.values if value > 0)
+        unique_words_count.append(unique_word_count)
+    print(unique_words_count)
+    
+    
     #export to xlsx to make it easier to read vsc cant handle dataframes well 
     file_name = 'Sparsematrix.csv'
 
