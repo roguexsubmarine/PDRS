@@ -3,7 +3,7 @@
 {% block content %}
 <h2 class="page-head">Login</h2>
 
-        <img src="../static/login.jpg" alt="login image" class="head-animation">
+        <img src="../static/login.jpg" alt="login image" class="head-animation" style="max-width: 300px; max-height: 300px;">
 
         <form action="{{ url_for('authenticate') }}" method="POST" class="file_form">
             <input type="text" name="name" id="name" class="form-control" placeholder="Name">

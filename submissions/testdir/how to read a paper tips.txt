@@ -1,0 +1,112 @@
+TIPS FOR EFFECTIVE READING OF A SCIENTIFIC PAPER
+Most scientific papers in biomedical sciences follow a standard pattern.
+1. The title. A one-liner, should convey the main message of the paper.
+2. The abstract summarizes the main points of the paper. It should have a few sentences to introduce
+the problem, followed by the main results and a conclusion. The abstract is meant to generate interest in
+the paper, also from scientists who are not directly familiar with the field.
+3. The introduction will give an overview of present understanding of the field. Importantly, the
+introduction should state the problems and questions that the paper addresses.
+4. The results section describes the experiments and some intermediary conclusions. The experiments
+and the data produced by the experiments are described along with figures and tables. These items,
+figures and tables form the meat of the paper and you should pay much attention to them.
+Increasingly, papers being published contain supplementary data, sometimes only published on-line.
+5. The discussion puts the results in the context of the questions originally asked, and will come to new
+conclusions and add some speculation. Sometimes, the discussion contains a diagram of a “new model”.
+6. References to the literature, which allows you to check the background to the work as done
+previously.
+7. Supplements
+When going over a paper, many scientists read the abstract and quickly scan the remainder, or ignore
+the main text depending on their interest. But if you are new to a field and new to reading scientific
+papers, you should spend more time and read the paper in a different way. Start by reading the
+introduction, and ignore the abstract for the time being. After reading the introduction, give yourself
+some time to think about the problem. What is the issue, what is the question that is being addressed?
+How would you approach it? What kind of experiments would you design to answer the questions?
+Then read the results, and look at the data carefully. Try to understand how the experiments are done.
+Then read the discussion and conclusions before reading the model figure at the end. See whether you
+agree with the conclusions.
+In general, read actively! Take your own notes instead of just highlighting on the paper copy.
+THERE ARE ONLY A FEW EXPERIMENTS:
+The following 3 types of experiments exist in all fields, and together provide the evidence needed to
+prove that A does B.
+1) Association experiments (what components are at the right time, place, and
+concentration to be able to function in a particular process):
+What components are present?
+When are they expressed?
+Where are they expressed ?
+How big are they ?
+What do they interact with?
+How tightly do they bind?
+How does abundance as found compare with concentrations needed for action?
+2) "Necessary" experiments (various ways of eliminating a component from a system,
+and asking if that component is necessary for the system to function):
+Surgically remove a possible causal agent
+Look for and study a mutant that inactivates a possible causal agent.
+Drip in pharmacological inhibitors.
+Add monoclonals, or morpholinos, or antisense, or RNAi to knock down particular components
+Adsorb out a population of cells, laser ablate
+Fractionate an in vitro system (genetics with salt)
+3) "Sufficient" experiments (various ways of adding a component to a system and
+asking whether that component is sufficient to trigger particular events)
+Transplants, beads, and implants
+Make transgenics.
+Microinject cells or messages or proteins.
+Move regulatory sequences from one gene to another.
+Express genes at different times and places to check effects.
+Add purified components together in an in vitro system .
+THE SYSTEMS THAT WE UNDERSTAND THE BEST ARE THOSE WHERE IT HAS BEEN
+POSSIBLE TO USE BOTH GENETIC AND BIOCHEMICAL TECHNIIQUES:
+Genetic approaches:
+Mutants.
+Hierarchies and pathways.
+Suppressors.
+Enhancer traps.
+Knockouts.
+Transgenics.
+Biochemical approaches
+Proteins and antibodies.
+Radiolabeling, pulse-chase.
+Fractionation.
+Purification.
+Direct tests of interaction.
+Reconstitution
+Structural and mechanistic studies.
+These approaches give complementary information.
+Genetics needs biochemistry to explain what hierarchies are really doing in physical terms.
+Biochemistry needs genetics to test function of identified components in living system.
+For in vivo experiments:
+Could you reinterpret as some animals or cells being sick in a nonspecific way?
+Could the observed phenomenon be an Nth order effect?
+Can you imagine a way of pulling the system apart using genetics? Using simpler in vitro systems?
+For in vitro experiments
+Have all components been defined?
+Has carry over been eliminated?
+What is signal to noise ratio?
+Have all possible rate limiting steps been separately considered?
+Can you see dose response?
+How does in vitro level compare to in vivo? Are concentrations within physiological range?
+How does in vitro rate compare to in vivo? Are they reasonable?
+Can you change interpretation by assuming that different members of the population act differently than
+population as a whole?
+Can you use genetics to verify importance of components in vivo?
+For any genetic analysis:
+More than one example of each complementation class?
+Dominance been examined?
+Null phenotype established?
+Time of action established?
+Place of action established?
+Number of genes required known?
+Order of genes known?
+Nature of genes known?
+What components may have been missed because of redundancy, pleiotropy, or maternal masking?
+General:
+What is the positive control? What is the negative control?
+What can you tell for sure?
+What is only correlation or consistency? Could correlation be reversed, with different cause and effect?
+What other models can you make?
+Could a positive effect really be an anti-negative, or a negative effect an anti-positive (activators vs.
+repressors of represssors)
+What are the advantages of this system over others?
+Is there a better system for the same phenomenon?
+What was the key technical breakthrough? What is the main handicap to further progress?
+Could techniques, materials, or conclusions have applications to other problems?
+What would you do next with this system?

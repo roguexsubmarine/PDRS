@@ -7,7 +7,8 @@ import sklearn
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-def calculate_similarity(directory_path):
+def calculate_similarity(p):
+    print("checking similarity ...")
         
     ext = ('.py', '.c', '.cpp', '.txt', '.ipynb','.java','.html')
     lst=[]
@@ -59,7 +60,7 @@ def calculate_similarity(directory_path):
     for _, row in df.iterrows():
         unique_word_count = sum(1 for value in row.values if value > 0)
         unique_words_count.append(unique_word_count)
-    print(unique_words_count)
+    # print(unique_words_count)
     
     
     #export to xlsx to make it easier to read vsc cant handle dataframes well 
@@ -117,12 +118,15 @@ def calculate_similarity(directory_path):
     plt.xticks(rotation=90)
     plt.yticks(rotation=0)
     plt.tight_layout()
-    output_filename = "similarityheatmap.png"
+    output_filename = "./static/similarityheatmap.png"
     plt.savefig(output_filename, format="png")
     plt.close() 
     
+
+    # print(simlist)
     return simlist
 
-p=input("Enter the directory path: ")
+# p=input("Enter the directory path: ")
 
-print(calculate_similarity(p)) #comment out later
+# print(calculate_similarity(p)) #comment out later
+print("...similarity checked")
