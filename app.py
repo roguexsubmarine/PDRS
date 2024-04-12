@@ -92,6 +92,7 @@ def clear_submissions_directory():
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
 
+
 @app.route("/extract", methods=['POST'])
 def extract():
     if 'file' not in request.files:
@@ -145,6 +146,7 @@ def extract():
 @app.route("/result")
 def result():
     data = session.get('sorted_data', None)
+    
 
     if data is None:
         return "Data not found. Please sort first."
@@ -165,4 +167,19 @@ def heatmap():
 def cluster():
     return render_template("cluster.html")
 
+
+@app.route("/singlecomparison", methods=['POST'])
+def single_comparison():
+    data = session.get('sorted_data', None)
+    student = request.form['student']
+    newdata = []
+    
+    for i in data:
+        if i[0] == student:
+            newdata.append([student, i[1], i[2]])
+        if i[1] == student:
+            newdata.append([student, i[0], i[2]])
+    
+    # print(newdata)
+    return render_template("singlecomparison.html", data=newdata)
 

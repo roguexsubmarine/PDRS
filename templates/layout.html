@@ -38,6 +38,22 @@ function loader() {
 }
 
 // Call the loader function to execute the SweetAlert 2 function
+
+
+
+
+        // reversing table
+        function reverseTable() {
+        const tableBody = document.getElementById("tableBody");
+        const rows = Array.from(tableBody.rows);
+        rows.reverse();
+        while (tableBody.firstChild) {
+            tableBody.removeChild(tableBody.firstChild);
+        }
+        for (const row of rows) {
+            tableBody.appendChild(row);
+        }
+        }
     </script>
 
     
@@ -78,6 +94,13 @@ function loader() {
             width: 100%;
             max-width: 600px;
             max-height: 600px;
+        }
+
+        .btn-outline-dark{
+          width: 100%;
+          overflow-x: scroll;
+          border: 0px;
+
         }
     </style>
 
