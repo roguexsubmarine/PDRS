@@ -101,6 +101,37 @@ def calculate_similarity(p):
 
     index=df.index
 
+
+    n = len(index)
+    similarity_matrix = np.zeros((n, n))
+    for pair in similarities:
+        i, j, similarity_score = pair
+        similarity_matrix[i, j] = similarity_score
+        similarity_matrix[j, i] = similarity_score
+
+
+
+    import networkx as nx
+
+    G = nx.Graph()
+    for i in range(len(similarity_matrix)):
+        for j in range(i + 1, len(similarity_matrix[i])):
+            similarity = 1 - similarity_matrix[i][j]
+            if similarity > 0:
+                G.add_edge(i, j, weight=similarity, label=f'{1 - similarity:.2f}')
+    #matrix of similarity scores
+    n = len(index)
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=1500, font_size=10, font_color='black',
+            edge_color='gray', width=2)
+    edge_labels = nx.get_edge_attributes(G, 'label')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='black')
+
+    plt.title('Graph of Cosine Similarity')
+    output_filename = "./static/clustermap.png"
+    plt.savefig(output_filename, format="png")
+    # plt.show()
+
     #matrix of similarity scores
     n = len(index)
     similarity_matrix = np.zeros((n, n))
