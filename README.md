@@ -1,7 +1,7 @@
 
 # PDRS
 
-Plagarism Detection and Reporting System
+Plagiarism Detection and Reporting System
 
 
 ## Installation
