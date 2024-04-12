@@ -89,8 +89,35 @@ def calculate_similarity(directory_path):
         similarity_score = pair[2]
         # print(f"Similarity between vectors {index1} and {index2}: {similarity_score}")
         simlist.append([index1,index2,similarity_score])
+        
+    import matplotlib.pyplot as plt
+    import seaborn as sns 
+
+    index=df.index
+
+    #matrix of similarity scores
+    n = len(index)
+    similarity_matrix = np.zeros((n, n))
+    for pair in similarities:
+        i, j, similarity_score = pair
+        similarity_matrix[i, j] = similarity_score
+        similarity_matrix[j, i] = similarity_score
+
+    #check colormaps once
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(similarity_matrix, annot=True, fmt=".2f", xticklabels=index, yticklabels=index, cmap="YlGnBu")
+    plt.title("Similarity Matrix")
+    plt.xlabel("Files")
+    plt.ylabel("Files")
+    plt.xticks(rotation=90)
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+    output_filename = "similarityheatmap.png"
+    plt.savefig(output_filename, format="png")
+    plt.close() 
     
     return simlist
 
 p=input("Enter the directory path: ")
-print(calculate_similarity(p))
+
+print(calculate_similarity(p)) #comment out later
