@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 
-# from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -41,20 +41,22 @@ def calculate_similarity(p):
             except UnicodeDecodeError:
                 print(f"UnicodeDecodeError: Unable to decode '{filename}'")
 
-    # vectorizer = TfidfVectorizer()
+    cvectorizer = CountVectorizer()
     vectorizer = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
 
     vectorizer.fit(lst)
+    cvectorizer.fit(lst)
 
     #comment this out l8r
     # print("Vocabulary: ", vectorizer.vocabulary_)
 
     #sm
     vector = vectorizer.transform(lst)
+    cvector = cvectorizer.transform(lst)
 
     #sparse matrix to df and dict
     df = pd.DataFrame(vector.toarray(), columns=vectorizer.get_feature_names_out(), index=file_names)
-    
+    cdf = pd.DataFrame(cvector.toarray(), columns=cvectorizer.get_feature_names_out(), index=file_names)
     unique_words_count = []
 
     for _, row in df.iterrows():
@@ -69,6 +71,7 @@ def calculate_similarity(p):
     print("Encoded Document is:",file_name)
 
     df.to_csv(file_name)
+    cdf.to_csv('countmatrix.csv')
 
     from sklearn.metrics.pairwise import cosine_similarity
 
@@ -101,6 +104,52 @@ def calculate_similarity(p):
 
     index=df.index
 
+
+    n = len(index)
+    similarity_matrix = np.zeros((n, n))
+    for pair in similarities:
+        i, j, similarity_score = pair
+        similarity_matrix[i, j] = similarity_score
+        similarity_matrix[j, i] = similarity_score
+        
+    #top 50 words barplot
+    frequency_df = pd.DataFrame(cdf.sum(), columns=['Frequency'])
+    frequency_df = frequency_df.sort_values(by='Frequency', ascending=False)
+
+    top = frequency_df.head(50)
+    top.plot(kind='bar')
+    plt.title('Top 50 Words by Frequency')
+    plt.xlabel('Word')
+    plt.ylabel('Frequency')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    output_filename = "./static/top50words.png"
+    plt.savefig(output_filename, format="png")
+    plt.close() 
+
+
+    #clustermatrix
+    import networkx as nx
+
+    G = nx.Graph()
+    for i in range(len(similarity_matrix)):
+        for j in range(i + 1, len(similarity_matrix[i])):
+            similarity = similarity_matrix[i][j]
+            if similarity > 0.2:
+                G.add_edge(i, j, weight=similarity, label=f'{1 - similarity:.2f}')
+                
+    n = len(index)
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, font_size=1, font_color='black',
+            edge_color='gray', width=2)
+    edge_labels = nx.get_edge_attributes(G, 'label')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='black')
+
+    plt.title('Cluster Map')
+    output_filename = "./static/clustermap.png"
+    plt.savefig(output_filename, format="png")
+    # plt.show()
+
     #matrix of similarity scores
     n = len(index)
     similarity_matrix = np.zeros((n, n))
@@ -110,7 +159,7 @@ def calculate_similarity(p):
         similarity_matrix[j, i] = similarity_score
 
     #check colormaps once
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(10,8))
     sns.heatmap(similarity_matrix, annot=True, fmt=".2f", xticklabels=index, yticklabels=index, cmap="YlGnBu")
     plt.title("Similarity Matrix")
     plt.xlabel("Files")
