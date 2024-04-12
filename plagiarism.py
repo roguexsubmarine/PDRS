@@ -116,16 +116,15 @@ def calculate_similarity(p):
     G = nx.Graph()
     for i in range(len(similarity_matrix)):
         for j in range(i + 1, len(similarity_matrix[i])):
-            similarity = 1 - similarity_matrix[i][j]
-            if similarity > 0:
+            similarity = similarity_matrix[i][j]
+            if similarity > 0.2:
                 G.add_edge(i, j, weight=similarity, label=f'{1 - similarity:.2f}')
     #matrix of similarity scores
     n = len(index)
     pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=1500, font_size=10, font_color='black',
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, font_size=1, font_color='black',
             edge_color='gray', width=2)
     edge_labels = nx.get_edge_attributes(G, 'label')
-    plt.figure(figsize=(10,8))
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='black')
 
     plt.title('Graph of Cosine Similarity')
@@ -142,6 +141,7 @@ def calculate_similarity(p):
         similarity_matrix[j, i] = similarity_score
 
     #check colormaps once
+    plt.figure(figsize=(10,8))
     sns.heatmap(similarity_matrix, annot=True, fmt=".2f", xticklabels=index, yticklabels=index, cmap="YlGnBu")
     plt.title("Similarity Matrix")
     plt.xlabel("Files")

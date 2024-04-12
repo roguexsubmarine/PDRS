@@ -154,7 +154,7 @@ def result():
 @app.route("/list")
 def list():
     data = session.get('sorted_data', None)
-    print("\n\n\nqwerty",data[0])
+    # print("\n\n\nqwerty",data[0])
     return render_template("list.html", data=data)
 
 @app.route("/heatmap")
