@@ -12,15 +12,16 @@
         <br>
         <form method="POST" enctype="multipart/form-data" action="{{ url_for('extract') }}" class="file_form">
             <input type="file" name="file" id="file" accept=".zip" class="form-control" placeholder="upload a file (*.zip)" required>
-            <input type="text" name="analysis_name" id="analysis_name" class="form-control" placeholder="Analysis Name" required>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="assignment_aim" id="assignment_aim" placeholder="Describe the assignment in short"></textarea>
 
             <br>
-            <label for="prog_lang">Programming Language :</label>
+            <label for="prog_lang" style="font-size: small;">Programming Language :</label>
             <select class="form-select" id="prog_lang" name="prog_lang" required>
-                <option value="0">Automatic</option>
-                <option value="1">C/C++</option>
-                <option value="2">JavaScript</option>
-                <option value="3">ASM (x86)</option>
+                <option value="0">Subjective</option>
+                <option value="1">Automatic</option>
+                <option value="2">C/C++</option>
+                <option value="3">JavaScript</option>
+                <option value="4">ASM (x86)</option>
               </select>
     
           
