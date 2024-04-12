@@ -1,4 +1,4 @@
-{% extends 'result.html' %}
+{% extends 'layout.html' %}
   
   {% block content %}
 
@@ -24,7 +24,7 @@
         .table{
             font-size:smaller;
             width: 90vw;
-            max-width: 750px;
+            /* max-width: 750px; */
             overflow-x: scroll;
         }
 
@@ -50,18 +50,16 @@
           </tr>
         </thead>
         <tbody>
+          {% for i in data %}
           <tr>
-            <th scope="row">1</th>
-            <td class="tcell">Maqqqqqqrk</td>
-            <td class="tcell">Osdfgfgtto</td>
-            <td>@mdo</td>
+
+            <th scope="row">{{ loop.index }}</th>
+            <td class="tcell">{{ i[0] }}</td>
+            <td class="tcell">{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
+          {% endfor %}
+
 
         </tbody>
       </table>

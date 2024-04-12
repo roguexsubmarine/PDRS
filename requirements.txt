@@ -3,3 +3,10 @@ gunicorn
 flask-session
 jinja2
 requests
+numpy
+pandas
+scikit-learn
+pypdf2
+seaborn
+matplotlib
+networkx
