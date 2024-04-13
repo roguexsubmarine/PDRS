@@ -1,815 +1,305 @@
 SENSORS AND AUTOMATION LAB
-
 Name: Ayush R. Bodile
 
 Branch : Metallurgy and Material Technology
-Semister: III
 
-Batch :A
+Semister: II
 
-MIS : 612211013
+Batch : A
+
+MIs : 612211013
 Sensors Modelling and Simulation
 
-PRACTICAL NO.1. Characterize the temperature
-sensor (RTD)
+PRACTICAL NO. 1. Characterize the temperature
+‘sensor (RTD)
 
-‘Aim: To understand the working principle of RTD.
-Objective:
+Satine wen Keene Cth Regain toad
+eros
 
-1. Study static and dynamic characteristics of RTD.
-2. Study effect of various parameters on RTD performance.
+2m cman marin or pd 2
+(Soe pot sor Bayete poser inal your encase wen, oi
+Sian soe. ne at ET FORMA bd tor
 
-Procedure:
+ptr tare Settee as, cane ph by non
+“vente gape dpc No ab apt erste wh ean france
+‘emanate ane rr ater
 
-1.Select the material of RTD you want to use. Temperature coefficient (a) for the same will
-be displayed on the screen. Note this value.Click on ' RO' to get the value of RO for selected
-RTD. Note the same.Click on ‘Get Temp’. The temperature for which Rt is to be found will be
-displayed.
+‘5mm’ aeons are acess oth raph
 
-2.Using formula calculate the value of Rt and enter the answer in the box provided (upto 2
-decimals with rounding off). Submit the answer using submit button. f your calculation is
-correct, go to step 3. Repeat the procedure min 3 times.f your calculation is wrong, you will
-be asked to repeat the same. Please refer to GET FORMULA tab and verify your
-calculations.
+63h pe RO torn alr on mn ae
 
-3.After finishing minimum 3 set of correct readings, you can see the graph by clicking on
-‘Plot’
-
-4.When the graph is displayed click Next tab to repeat the procedure with different reference
-resistance(RO) value and with different materials.
-
-5.Minimum 3 calculations are necessary to plot the graph.
-
-6..Study the graphs for RTD performance with different reference resistance values and
-different materials.
-
-Simulation:
+‘Simulation
 LEVEL 1: STATIC CHARACTERSTICS
-Level-1 Static Characteristics Control Panel
 
-Material :
+apt 2 yams camariie
+Sy yma rgnae RTD pe
 
-—
-Ry:
+‘epost offers nage inte peeaThe mcm mera he
+[TD aan, sane betes dope by GET Tere
 
-Static Characteristics
-Selected Values
+Sep te Proce:
+1 Sct RD as are amet ate ton ih stand anise or
+Sc eine ce ge eyes ry ay
 
-‘Material: Platinum
-Resistance (Rg) :100
-Measurement Temperature :759
-Your Answer 392.215
+SERINE te ct ce ow aes
 
-‘Measurement Temperature :154
+“now alec be RTD samc pefomance win hemowell Sct pepsi ar
+‘Stine and hing ma The te santas vate wget nye anata
+Sein Rn ad tig lan th ye
 
-Temperature vs Resistance
+chek et btan to coeane te jamie espns (Tine Ve Teper
 
-eae
+1 Ober a ery rear tv f RTO wich genres th ine onan
 
-semper (he)
+‘te orton th arto Pot Tf ot yo he
 
-“= Gemoh |
+‘Simutation
+LEVEL 2DYNAMIC CHARACTERSTICS
+em oymnic harass
 
-Expt. 2: Dynamic characteristics
-‘Aim : Study the dynamic response of RTD probe
+I
 
-In this experiment, Platinum RTD is used for calculating the time constant values. The
-response of RTD for a step change in the input is plotted. The maximum temperature the
-RTD attains, is same as the temperature displayed by 'GET Temp' tab.
-
-Step by step Procedure:
-
-1.Select the RTD as bare element (make it on). With the standard dimensions considered for
-bare element, the time constant value will get displayed in the output box. Verify this by
-using equation given under Get formula tab.
-
-2.Now select the RTD dynamic performance with sheath. Select appropriate material and
-thickness value. The time constant value will get displayed in the output box. Verify this by
-using equation given under formula tab.
-
-3.Observe the change in the time constant values with different materials with different
-thickness.
-
-4.Now select the RTD dynamic performance with thermowell. Select appropriate material,
-thickness and filling material. The time constant value will get displayed in the output box
-when thermowell material, thickness and filling material is selected. Verify this by using
-‘equation given under formula tab.
-
-5.Observe the change in the time constant values with different materials with different
-thickness. Also see the effect of change in filling material.
-
-6.Click on plot button to observe the dynamic response (Time Vs Temperature).
-
-7.Observe and verify response time of RTD which is generally 5 times the time constant
-value.
-
-8.After completion of both the parts, you can proceed to Post Test to find out if you have
-understood all aspects of the experiment.
-
-Simulation:
-LEVEL 2:DYNAMIC CHARACTERSTICS
-
-Levelt
-
-‘Level-2 Dynamic Character
-
-Bare: @
-
-‘Material: [Patium
-
-Withsheath:
-
-vaca: [S238]
-tienes [t0aa
-
-‘Thermowell: @
-
-Material: {58316 :
-
-ee
-
-a
-
-Temperature vs Time
-
-‘Temperature Vs Time
-
-7 7% 7 7
-Time Ge)
-(=
-
-ce > Witeneatn aw Thannowall Steps]
-
-[om [neo
-
-CALCULATIONS:
-
-Conclusion: The working principle of RTD has been understood.
+Conelaan: ne wong pct RTD har been cero
 
 Experiment 2: Characterize the LVDT
 
-Aim: To understand working principle of LVDT.
-Objectives:
+Ain To nena worry perl LOT.
+Objet:
 
-1. Study the relation between core displacement and output of LVDT.
-2. Understand the effect of change in supply frequency on LVDT performance.
-3. Understand the effect of change in excitation (supply ) voltage on LVDT performance.
+2 Unahatantte stect fange apy hau) an Epon,
+5 Unsertanh tt of nange mowon pe eotge on VDT pevoranc,
 
-The procedure to use the simulator is given below.
+satrae e Sapme ye py so rt ans ote
 
-1 First you need to configure the LVDT. Click on ' Show pane!’ tab at the right bottom For
-making the circuit, drag and drop the primary coil, Armature and secondary coils at the
-loactions shown on left hand side.
+‘depen arate nb DT dagen Crvoncolgue ech ocr COT
+‘Metartc ethan sds anfakeae tafe on Pe pcg Taco
+Steere ne tre vou hig melons ana ona tance we taka
+(goon Theva copncnets escent amit oe ewe Sr
 
-2 Now select No of Turns, peak to peak supply volatge and frequency from the drag and
-drop menu, available below LVDT diagram. Click on configure block to configure LVDT.
+“Rage! tap? by hanging ap whine acong een anda tne
+eran Sy heft on ste vag, Far re nl wl Cage tab 9
+‘eros nl ound osu roe a om pS
+‘sRapet tape? by hanging see eqn aeong andes ont Shy
+Sees att age
 
-Now click on the black rectangular core placed between primary and secondary windingDrag
-the core to left hand side and observe the effect on the output magnitude. This can be
-observed on the time vs output volatge waveform and on the Distance vs output voltage
-graph. The core displacement is indicated in the square box below the diagram
+Row en py vag an tesuecy crt Cane han ane anata he
+(alone aupttage ypeing tape
 
-3.Drag the core to right hand side and observe the effect on the output magnitude. Also
-observe the change in the phase.
+‘Seton Gah
 
-4.Repeat steps 2 to 4 by changing supply volatge keeping frequency and no of turns
-constant. Study the effect on the output voltage. For this click on blue color ‘Configure’ tab in
-the right side panel. You need to select required parameter value from drop down menu.
-After selecting the values click on green ' Configure" tab to set the parameter values.
+Seiten
+ae
 
-5,Repeat steps 2 to 4 by changing supply frequency keeping and no of turns constant. Study
-the effect on the output voltage
-
-6.Now keep supply voltage and frequency constant. Change the no of tums and observe the
-effect on the output voltage by repeating steps 2 to 4.
-
-Simulation Graph:
-
-1. No of tuns: 1000
-vms =: 7
-Supply Frequency : 1000
-Displacement : 0
-N
-
-e
-
-. No of tuns: 1000
-
-STAT TIC RAPRIN ARR
-AAT
-
-No of tuns: 1000
-
-vms =: 7
-
-Supply Frequency : 1000
-Displacement : 5
-
-lu
-
-vms =: 7
-Supply Frequency : 1000
-Displacement : -3
-
-7
-
-sneered
-
-4. No of tuns: 1500
-
-vms : 5
-
-Supply Frequency : 3000
-Displacement : 1
-
-5. No oftuns: 1500
-vms : 5
-Supply Frequency : 3000
-Displacement : -1
-Conclusion:
-Therefore, we have simulated a LVDT and observed the effect of different parameters and
-their differing values.
+SEE eed Tan tenet fs ten pat an
 
 Experiment 3: Simulate the performance of a chemical sensor
 
-Aim: To understand the working principle of chemical sensors
-Objectives :
+oo
 
-Study the working principle of pH and conductivity.
-Calibrate the pH sensor.
+1 Si bwin pin ha cody
+1 Susy ampere ane edad cnaration on ony
 
-Study the effect of temperature on pH measurement.
+Yet te suet fcc fhe samo,
+Sep step Proce:
 
-Study effect of temperature and effect of contamination on conductivity
-measurement.
+1 Sway sonra digem
+“Co at we fie hich ped a on sen
 
-RENS
+“ater etatg an he PM Cncenatn, Equant wig nena 1 25C 2
+Gepoyesoimengitasepana
+"Usp foscan ha a ct crc salted sae a eit
+‘eto ne ocr on crn nigh Sine sone hg
 
-Level 1: Conductivity Measurement
+{ity cnn crete oped nt en One end
 
-Aim : To study the measurement of the conductivity of the sample.
+Rapet tm prcaate lor erent concent ane amp
 
-Step by step Procedure:
+‘es aw be aise
 
-1.Study the schematic diagram.
-2.Select the sample from drop down menu.
+‘Syn eto engeretie change an th reasiemert tani
 
-3.Select the concentration of the sample.
+bts exparnet by zing fe os ae ca charge th ei fh fmt ant
+‘Shtuae ne cchoy
 
-4.Cell constant will be fixed which is displayed as 1 on screen.
+Sep te Proce:
 
-5.After entering data the PPM Concentration, Equivalent weight and Density at 25°C is
-displayed in the right side panel.
-6.Enter the calculated specific conductance. For calculations of specific conductance click
-‘on Formula tab.
+1 Sway ne sotmaedigrm
+2 he ample by det he warned rn
 
-7.Using the formula, calculate the value of the conductivity for the selected sample and enter
-the answer in the box provided (upto 2 decimals with rounding off). Submit the answer using
-submit button,
+‘Seth oncarnton cf tesa, Sled cananatn wt be payed on
+4. on Ter, pene meet cn eye
+‘marth clad conticy tamper of rest Fratton ot
+ence on FORA
 
-8.If your calculation is correct it will be displayed on the screen. Otherwise you need to
-recalculate.
+se et aie tm rt de ony el cee ae
+"yur calenon core et conduct athe lacs angen wl be
+epoyedon sone
 
-9.Repeat the procedure for different concentrations of a same sample.
+(Rapet tm prcaaie lo rn angers lth same sane a acannon
+Scnun ie cars cyte graph re ate
 
-10.Minimum three calculations are necessary to plot the graph and after three calculations
-the plot tab will be activated.
+{2A si be graph naan gr thy ne
+Sy ecto cararnaon on masse of
 
-Level 2: Effect of Temperature.
+eeanaicay a he maance
 
-‘Aim :Study the effect of temperature change on the measurement of conductivity.
+Sep te Proce:
+1 Sty dag corte
 
-In this experiment, by using the formula one can change the value of the temperature and
-calculate the conductivity.
+{col cat wl fied hich ped a on sen
 
-Step by step Procedure:
+er stcr he contro eSpace concen, Moti Cal Contant Maas
+{poche coniranee aes depajedon soon
 
-1.Study the schematic diagram.
-2.The sample selected is by default the user has selected for level 1.
+By carping te Sate conductance, Med pete conten ne can 20
+Suse Sotabrton on sane ony
 
-3.Select the concentration of the substance. Selected concentration will be displayed on the
-screen.
+evel Calibration
 
-4.Click on Get Temp. The temperature value and its temperature coefficient will be displayed
-on the right hand side on the screen.
+—f— = —
+pv oamais
+[e=3}
 
-5.Enter the calculated conductivity at a temperature of interest. For calculations of
-conductivity click on FORMULA tab.
+pe
 
-6.Using formula, calculate the value of the conductivity for the selected sample and enter the
-answer in the box provided (upto 2 decimals with rounding off). Submit the answer using
-submit button,
+Level 2 Measurement
 
-7.f your calculation is correct, the output conductivity at the selected temperature will be
-displayed on the screen
+ncn ont Se
+14
+fe
 
-8.Repeat the procedure for different temperatures of the same substance and concentration.
-
-9.Minimum three calculations are necessary to plot the graph and after three calculations the
-plot tab will be activated.
-
-10.After study hide the graph and repeat the experiment with varying substance and
-concentration.
-Level 3: Effect of Contamination
-Aim : Study the effect of contamination on measurement of pH.
-
-1.In this experiment, one can change the value of the contamination and obser its effect on
-ivity of the substance.
-
-Step by step Procedure:
-1.Study the diagram completely.
-2.Select the substance .Selected substance will be displayed on the screen.
-
-3.Select the concentration of the substance. Selected concentration will be displayed on the
-screen.
-
-4.Cell constant will be fixed which is displayed as 1 on screen.
-5.Select the contamination in mm.
-
-After selecting the contamination the Specific conductance, Modified Cell Constant ,Modified
-specific conductance value is displayed on the screen.
-
-6.By comparing the Specific conductance, Modified specific conductance one can see the
-effect of contamination on substance conductivity.
-
-7.Change the substance, concentration and observe the result.
-
-pH CALIBRATION SIMULATOR:-
-
-Level-1 Calibration
-
-Calibration Diagram: Control Panel:
-
-Calibration at 25°C
-
-‘Connecting Wire
-
-Initial prt value: | 7
-pH Value # ¥
-
-pH Electrode pH TSI
-
-Glass bulb
-
-‘Standard Solution
-pH Vs Output{mV) Graph
-
-pH Vs Outputtnv) =
-q
-E
-oa
-i
-a
-00" + iy iy 10 7 cs
-”
-(crea)
-(or press ESC or click the overlay)
-Level-2 Measurement
-ete
-Control Panel:
-Measurement Diagra
-Temperature at 25°C
-sample:
-‘ign
-Impstance —Amplier —_Dipay
-Enter Output Voltage:
-ter Gam)
-‘Leman Juice 22 a7 al
-a reir
-a
-
-Level-3 Temperature
-
-<-Level-2
-
-. Control Panel:
-‘Temperature Diagrai
-
-‘Sample: Baking Soda
-
-‘At 25°C Output mV =-118.32
-
-High
-Impedance Ampilifer Display 18°C
-Butter
-PH Vs Output(mV) Graph x
-
-PH Vs Output(mv)
-
-outpetiny
-
-pH
-
-© Graph 1 Graph?
-
-[co | (or press ESC or cick the overlay)
-CONDUCTIVITY SIMULATOR:-
-
-Concentration vs Conductivity Graph
-Concentration vs Conductivity Sy
-go
-Bos
-a
-3
-oa:
-
-Concentration in Percentage
-
--® Measurement Graph |_|
-
-EE] TO ress ESC OF Cok Mie overlay)
-
-lemperature vs Conductivity Graph
-
-‘Temperature vs Conductivity
-
-09"
-
-Conductivity in Siemens
-
-06:
-
-oy F % = % =
-
-“Temperature ln Degree Celsius
-
-[+ Temperature Graph 1 |
-
-aad click the overlay
-
-Measurement of Conductivity
-
-©
-
-Level-3 Contamination
-
-Control Pane:
-
-if
-
-Calculations:
-
-XN Coluledros of Zep Fe —
-Fovrula s = [£, = 2-306 or) ph}
-
-= Ginee ° KR: £. hk,
-g 206 > 29F- tr Ke
-Loaner C,
-Bia
-A Lehieeg A Ppl > 7-72
-5 4 (0-2: B00b [R54 VZWIT ee
-264 4ee
-
-2) For Due aod pl. > 5-2
-" =a
-
-B= = 08-32 VY
-
-2 232
-a) FA [Nyaa 7, ed oat
-a = £34
-
-Conclusion:
-Therefore, we have simulated chemical sensors. We have calibrated the pH sensor and
-compared the effect of temperature difference on the same sample.
 Experiment 4:. Measurement of level in tank using
 capacitive type level probe
 
-Aim: To measure tank level using capacitance level probe.
-Objectives:
+Objet:
+2 Unsetan woking of caactanc el ane
 
-1. Review various methods of level measurement.
-2. Understand working of capacitance level transmitter.
+1 Sway ne pen gt comply
+‘Teale raat cur oeage or ge np pe probe ited 2 fam,
 
-Procedure:
-1.Study the given diagram completely.
+“4 Salectha al frac one cpesage lor peepee aber
 
-2.Select the height of the tank in centimetres.
+‘Sponvae wl gt celaed Span 90% a hana neta
 
-3.The value of radius of outer cylinder/pipe for pipe in pipe type probe r2 is fixed 2.5cm.
-
-4.Select the value of radius of inner cylinder/pipe for pipe in pipe type probe 11 in
-centimetres.
-
-5.Span value will get displayed. Span is 90% of the height of the tank.
-6.Select the service for which capacitance probe is to be used.
-
-7.Click on ‘Configure System’. It will ask for confirmation.
-
-8.After confirming, select the fluid level from drop down menu for selected service.
-
-9.Enter the calculated user output capacitance in uF. For calculations of output capacitance
-click on GET FORMULA tab. Using formula calculate the value of the output capacitance for
-the corresponding level and enter the answer in the box provided (upto 2 decimals with
-rounding off). Submit the answer using submit button.
-
-10.If your calculation is correct it will be displayed on the screen. Minimum three calculations
-are necessary to plot the graph. Click on level vs. capacitance graph and level vs. current
-graph and study them.
-
-11. Click on next set of values. Change the value of rland repeat steps 7 to 10 Click on
-graphs and study them .
-
-SIMULATION:
-(CAPACITANCE
-
-Height o
-
-Experiment
-
-Selected values :
-
-of Tank: 2500 em
-
-Outer radius(r2): 2.5em.
-Span Value: 22:
-
-Inner radius(r1): 0.9em_
-
-Service:
-
-output Capacitance: 172 Jur
-
-ter! i |
-
-Coffee Beans
-
-1300, =
-
-—
-
-‘Capacitance Graph ‘current Graph
-
-Level vs Capacitance Graph
-
-oes
-
-Capacitance (uF)
-
-Level vs Capacitance
-
-Level (om)
-
-> capacitance Graph 1)
-
-CALCULATION:
-
-ESC orclekthe averay)
-Conclusion:
-
-Therefore, we simulated capacitive level sensor and compared the capacitance of the
-sensor
-
-against different levels of liquid.
-
+‘etn GET FORMICA a Ung teste vn of scene
+tify ction com ib gays onthe sren Mrmr clans
+‘Sertensay in pt be pap lease copcrcegagh oe cae
+eonana sy ere
 Programmable Logic Controller
 
-Experiment 5: | Study hardware and software used in PLC.
+Experiment 6: Study hardware and software used in PLC.
 
-Aim To study hardware and software associated with PLC
-Objectives 1.Learn the basics and hardware components of PLC
-2.Understand configuration of PLC system
+(bce Leute bcc an harnare congeners PLE
+2a cnr of PLE tem
+Skt eur tr Hock PLE
 
-3. Study various building blocks of PLC
+rca: rar ane Stare Sty Preeti (Sher ern:
 
-Procedure: Hardware and Software Study Procedure (Short Version):
+erty Crpanene: eam ate ay hardware congonrt tg te CPU,
+Inte pone sop an earenneatonratacs
 
-Hardware: Gather Resources: Obtain a PLC system or simulator and access relevant
-documentation.
+2. and Cormac: Understan ow we puto eves a comet ta
+Set Language: Chote apoganming lange ene og) re PLE
 
-1.\dentify Components: Learn about key hardware components, including the CPU,
-input/output modules, power supply, and communication interfaces.
+Sota congue PLC pram tare on our sa
 
-2Wiring and Connections: Understand how to wire input/output devices and connect Install
-the PLC to power.
+{ora a en hr’ tng er tad
+‘rp Acta ashe Laa abot ta gpg Hl lagen, ander
+sein.
 
-Software:
-3.Select Language: Choose a programming language (e.g., ladder logic) for the PLC.
-Software: Install and configure PLC programming software on your computer.
+idaimanne Few the ponds wi bo yugeha akc ancenring a PS
 
-Create Program: Develop a simple control program, download it to the PLC, and run it
+(eres
 
-4.Monitor and Debug: Use the software's monitoring and debugging tools to test and
-troubleshoot the program.
-
-Explore Advanced Features: Learn about data logging, HMI integration, and security
-settings.
-
-5.Documentation and Practice:Consult Manuals: Refer to PLC hardware and software
-manuals for specific details.Use Online Resources: Access online tutorials and seek
-guidance from experienced professionals.Practice: Apply your knowledge through projects
-and simulations. Following this procedure will help you gain a solid understanding of PLC
-hardware and software.
-
-SIMULATION:
-S Programmable Logic Controller
-1PPOTSE
-
-P SR-@ =
-222 9 ey » =
-
-89
-
-\¢
-20H 0
-
-eer LY Say
-
-Conclusion:
-
-Thus we have studied PLC hardware and software used in implementing industrial
-automation
-applications.
+‘ieee sda aston untnneig
+Senctone
 EXPERIMENT NO 6: IMPLEMENTATION OF LOGIC GATES
 
-Aim: -
-To understand Simple Ladder program.
-
-Objectives: -
-1.Develop a ladder using standard procedure.
-
-2.Solve the problem using ladder programming.
-Procedure for Creating and Testing Ladder Logic Diagrams: -
-1. Preparatory Steps:
-a. Understand the problem statement, e.g., testing logic for OR gates, AND gates, etc.
-b. Develop and validate the logic on paper by considering various cases.
-c. Prepare a truth table and test the logic with all valid cases.
-
-d. Open the PLC simulator by clicking the "Simulator" button.
-
-2. Creating the Ladder Diagram:
-a. In the simulator workspace, you'll see the first window.
-
-b. Place contacts and coils as needed by selecting them from the left panel.
-
-c. Double-click on contacts and coils to assign tag names like "start,
-etc. Ensure that tag names match process connections.
-
-'stop,” "motor," “lamp,”
-
-4d. Note that tag names are case-sensitive, so use the correct case for bit-level usage.
-
-@. Click the "Run" button on the left side to enter the run mode. Both sides of the rung will
-tum green, indicating it's ready for testing. In run mode, you can't make changes; switch to
-design/program mode for modifications.
-
-f. Double-click on contacts to toggle their state. This will change the output contact's status.
-
-g. Keep in mind that ladder contacts are initially in a de-energized state, meaning they are
-not active.
-
-Simulation:
-Conclusion:
-Thus, we have implemented and verified logic gates as per their individual truth tables.
-EXPERIMENT : 7 .Develop an application using On-Delay
-timer
-
-Aim
-To develop an application using On-Delay timer.
-
-Objectives
-1. Study the timing diagram of On Delay Timer
-
-2. Solve the assignment of Ton timer
-
-Procedure: In this experiment, an on-delay timer is being tested using a simulator. The
-following timer bits are observed:
-
-1. "q" bit: The initializing bit.
-
-2. "EN" bit: The enable bit.
-
-3. "DN" bit: The done bit.
-
-4. "TT" bit: The timer timing bit.
-
-1.The user needs to enter a preset value for the timer. To reset the timer counter, a "Reset"
-command is used with a tag, which should match the counter's tag, like "CU1.”
-
-2.The timer can be configured with a time base of either 1 millisecond (1 mS) or 10 milliseconds
-(10 mS) based on the application's needs.
-
-3.To test the "EN," "DN," and "TT" bits, you can double-click on them and assign a tag name.
-‘The same tag name is used in a new rung to check the status or activate the timer’s output.
-‘These bits can also be used for cascading timers.
-
-4.In run mode, you can observe the bit status when input "a" is toggled. When the delay is over,
-you can check the output bit status.
-
-5.To reset the "DN" counter, you use the "Reset" command with a tag matching the counter's
-tag, like "CD1.” This allows the counter to be configured for new counts without reloading the
-page.
-Simulation:
-
-‘; a z—
-
-rs
-a
-ry
-a
-
-Conclusion:
-
-An On-Delay timer application offers precise control over the timing of actions, enhancing
-efficiency and safety in various domains, including manufacturing, automation, and energy
-management. It provides a valuable tool for automating processes and tasks, ultimately
-improving productivity and resource management.
-EXPERIMENT 8: Develop an application using Off-Delay timer
-
-Aim:
-To Develop an application using OFF Delay Timer
+‘odamtan Sipe Latter pram,
 
 Objectives:
-1. Study the timing diagram of OFF Delay Timer
 
-2. Solve the assignment of Toff timer
-PROCEDURE:
-The configuration of off delay timer is same as ‘on delay timer’.
-A typical difference can be observed in the operation (in Run mode) .
+Procedure or Creating and Testing Ladder Logie Diagrams:
 
-When the q bit is energised the output DN bit goes high. The timer starts only after toggling the
-initialisation bit again.
+1 Prepay Spe
+2 Underta tepbim serene, eng efor OR ates, AUD gts.
+ Oeeop ant valet geen papery nsdn vane case
+4. Open hPLC smaitr by lkng “Sear btn,
 
-:
+ nesinusinrwcrtpace,joullage eet now
+Pace conc ancl a nace y ecg tho te ane
 
-Sf Os9r63.22369208:
+eae clon cant nda sgn grams "ane" meta"
+of ae tag mares man pana ames
 
-To test the EN, DN, and TT bits; double click on the bit and give tag name to the bit. The same
-tag name is to be used in the new rung to test the status or to energies the output. You can also
-test the cascading of the timer using these bits.
+4. Noe tang ames are ase sentv, 0 2s th cores cae for el 96
 
-‘Simulation:
+sum men, eng aay ingen oa, au crt mak shang en
+Stegnsagam ese ormaatenare
 
-im
+‘Dalek an cant tng et. Tel charge th cpl cei et
+EXPERIMENT : 7 Develop an application using On-Delay
+timer
+
+‘am an spent ing On Day tee
 
 a
 
-rors
+esedee napster ey treba ear ams Te
 
-oo
-ps
-=
-=
-g
-=
+omar ised was ncn stoadma car's, Ca
 
-T0F:8
+2 Ttoercanbaconigunaa ting tae ler! meson mor Omens
+‘ibsfbsen ti alan nee
 
-com!
+2 Totmatna ENON" an" ou can bck on am ana gm.
+“hese ingrae ead nent cehsth otse h ee eae
+peste SN eae ate
 
-‘The application has been developed using Off-Delay Timer.
+potent cee
 
-Conclusion:
-Experiment 9: Develop an application using up/down counter
+a enipogl When te ay,
 
-Aim
-To Develop an application using UP/DOWN counter
+‘Tete W cun yun "esa conmandn aagmatoeg scours
+SSS‘UDT Se he Me ccenerobe creat new coate wena ressarg
+‘Annas speaton tr re cnt tn ing acon etarcng
+‘Seaport peier nate lt aac preceae soa say
+Inpro runt and menue manson
+EXPERIMENT 8: Develop an application using Off-Delay timer
 
-Objectives
-1. Study Counter timing diagram.
+{bes an pletion sing OFF Oey Tin
+cope
 
-2. Develop an application specific ladder program using counters.
-Procedure:
+"Sey tig Sra OF Dey Tree
+2. Saver atigmeral ear
+‘ha erties aan Sy er
+Apt derece canbe steve ie cpuson fn Puma)
 
-‘The counter counts the pulses received at input. The pulses can be given by toggling the input bit
-“q' in this case. The counter will keep on counting till it reaches the preset value set by the user.
-‘Once the accumulator is equal to preset the DN bit will be energised. After this instant if next
-pulse is detected the accumulator will increment without changing the status of DN bit.
+Vente bss aoa apt DN ge Hah. Ther st on ae he
 
-To reset the counter use "Reset" command so that the counter can be configured for new counts
-without reloading the page. Please note the tag of the reset bit must be the tag of counter
-e.g."CU1". The screen shot will appear as shown below.
+Le aD
+Seeenviera
 
-[iene oie eme Sau
+‘ha apleton ar bean deepesing OF Oey Tne
+Experiment 8: Develop an application using up/down counter
 
-C # Omame uatosPC i rary
-bee *
-a
-j= «
-—— |
-—
-tat
+{bev an aplston sing UNCON oer
+Orjectias
 
-In case of down counter the entire procedure will remain same. Only the number of counts are to
-be entered in the accumulator tab. The preset value is zero. When the input contact closes, the
-accumulator will go on decrementing, will reach to zero '0' value and the status of done bit will
-change.
+1 Sy att Aga,
 
-To reset the DN counter use “Reset” command so that the counter can be configured for new
-counts without reloading the page. Please note the tag of the reset bit must be the tag of counter
-e.g. "CD1".
+2. slp anager sclera ur be
+‘he rssh pulses tip T pss can ghey pg te
+Sree sats a opt Sr be eerges Me ere na
+SOS SSSR ct ys ON
 
-Simulation:
-crap
+ees
+te ee
+—— a
 
-|
+Eictwedinf scans. ne presets sas Wher be meter Seat,
+Socio nliocncmnei wl asinsec am bein debt
 
-po [=|
+Bi
 
-‘erup
-
-+; a a
-
-Conclusion:
-
-The application has been developed using Up/Down Counter.
+‘The appcstonharbeencesopeduor Up/Down Cautee

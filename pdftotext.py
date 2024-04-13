@@ -21,7 +21,7 @@ def pdfwriter(dirpath):
         filepath = os.path.join(dirpath,pdf_file)
         if has_images(filepath)==True:
             
-            pages = convert_from_path(submissions_directory + '/' + pdf_file, 100)
+            pages = convert_from_path(submissions_directory + '/' + pdf_file, 50)
             extracted_text = ''
             for page in pages:
                 extracted_text += pytesseract.image_to_string(page)

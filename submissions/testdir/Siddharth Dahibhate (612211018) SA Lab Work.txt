@@ -1,240 +1,215 @@
 SENSORS & AUTOMATION LAB WORK
 
-NAME :- Siddharth Vilas Dahibhate
-MIS :- 612211018 BATCH :-A
-BRANCH :- Metallurgy & Material Sciences
+NAME Siddharth Vilas Dahibhate
+is - 612211018 BATCH: A
+BRANCH -- Metallurgy & Material Sciences
 
 EXPERIMENT NO. 1
 
-Aim :- To understand the working principle of RTD
-( Resistance Temperature Detector )
+‘Aim := To understand te working principle of RTD
+(Resistance Temperature Detector)
 
-Objective :- 1. Study the static & dynamic characteristics of RTD
+Objective: 1. study the static & dynamic characteristics of RTD
 2. Study effect of various parameters on RTD performance
 
-Theory :- A Resistance Temperature Detector is an electronic device
-used to determine the temperature by measuring the resistance of an
-electrical wire. This wire is referred to as a temperature sensor. If we
+‘Theory :- A Resistance Temperature Detector is an electronic device
+used fo datommine the temperature by measuring the resistance of an
+Clctical wie. This wire ig referred to as a temperature sensor. If we
 want to measure temperature with high accuracy, a RTD is an ideal
 solution as it has good linear characteristics over a wide range of
-temperatures.
+tamperatures.
 
-Calculations :-
+Calculations =
 Conclusion :- We have understood the working and structure of RTD
 through simulation.
 
 EXPERIMENT NO. 2
 
-Aim :- To characterise the Linear Variable Differential Transformer.
+[Aim := To characterige the Linear Variable Diferental Transformer,
 
-Objective :- 1. Study the relation between core displacement & output
+Objective :-1. Study the relation botween core isplacoment & output
 2. Understand the effect of change in supply frequency on
 LVDT performance
-3. Understand the effect of change in excitation (supply)
+83. Understand the effect of change in excitation (supply)
 voltage on LVDT performance
 
-Theory :- LVDT is Linear Variable Differential Transformer. It is an
-electrochemical transducer It converts the rectilinear displacement of
+Theory :- LVOT is Linear Variable Differential Transformer. Iti an
+clectrochemical transducer It converts the rectilinear displacement of
+fany object to which i is coupled mechanically in electical signal
+proportional toi
 
-any object to which it is coupled mechanically in electrical signal
-proportional to it.
+Calculation:
 
-Calculation :-
+il
 
-UAANAMNIALALAIANNUUAASAALAIASANAIALAALANAAIUAAIAANY 2AM AA
-A LUAU GL VAT
+vy
+RH
+iin ina
 
-Conclusion :- We have studied the working and construction of LVDT
-and the effect of various factors on its performance through simulation.
+Conclusion :- We have studied the working and constuction of LVDT
+{and the effect of various factors on its performance through simulation
 
 EXPERIMENT NO. 3
 
-Aim :- To understand the working principle of Chemical sensors
+‘Aim :-To understand the working principle of Chemical sensors
 
-Objective :- 1. Study the working principle of pH & conductivity sensors
-2. Calibrate the pH sensor
-3. Study the effect of temperature on pH measurement
-4. Study effect of temperature and effect of contamination
-on conductivity measurement
+Objective :1. Study the working principle of pH & conductivity sensors
+2 Calibrate the pH sensor
+3. Study the effect of temperature on pH measureme
+4. Study fect of temperature and effect of contamination
+‘on conductivity measurement
 
-Theory :- pH is one of the most common analyses used in the Process
-industry. pH is actually a measurement of the activity of hydrogen ions in
-the sample. pH measurement runs on a scale from 0-14, with 7.0
-considered as neutral. Electrical conductivity is a measure of the ability
-of a solution to carry the current.
+‘Theory: pH is one of the most common analyses used inthe Process
+industry. pH is acually a measurement of the activity of hydrogen ins in
+the sample. pH measurement runs on a scale from 0-14, wih 7.0
+Considered as neutal. Electrical conductivity is @ measure ofthe abilty
+(ofa solution to cary the curont
 
-Calculation :-
-PH Vs Output(mV)
+Calculation =
+Graphs =
 
-pH Vs Output(mV)
-
-PH Vs Output(mV)
-
-Concentration vs Conductivity
-
-ty Siemens
-
-Concentration in Percentage
-
-© Heasurement Graoh
-
-‘Temperature vs Conductivity
-
-Conductivity Siemens
-
-Temperature in Degree Celsius
-
-& Temperature Gragh 1
-
-Conclusion We have studied the working principles of chemical
-sensors for measurement of pH value and conductivity through
-simulation.
+Conclusion :- We have studied the working principles of chemical
+Sensors for measurement of pH value and conductivity through
+simulation
 EXPERIMENT NO. 4
 
-Aim :- To measure tank level using capacitance level probe
+[Aim :-To measure tank level using capacitance level probe
 
-Objective :- 1. Review various methods of level measurement
-2. Understand working of capacitance level transmitter
+Objective
 
-Theory :- In industry, liquids such as water, chemicals and solvents are
-used in various processes. The amount of such liquid stored can be
-found by measuring the level of liquid in a container or a vessel. The
-level affects not only the quantity delivered but also pressure and rate of
-flow in and out of the container. Level sensors detect the level of
-substances like liquid, slurries, granular materials and powders. The
-substance to be measured can be inside a container or can be in its
-natural form. The level measurement can be either continuous or point
+Review various mathods of level measurement
+2. Understand working of capacitance love ransmiter
+
+‘Theory: In industry, quids such 2s water, chemicals and solvents are
+used in various processes. The amount of such iquid stored can be
+found by measuring the love of liquid in a container or a vessel. The
+level affects not only the quantity dalvered but also pressure and rate of
+flow in and out of the container. Level sensors detect tha level of
+substances tke quid, sluries, granular materials and powders. The
+substance to be measured can be inside @ container or can be ints
+‘natural form. The level measuremant can be ether continuous oF paint
 values.
 
-Calculation :-
-
-Graph :-
-Level vs Capacitance
-
-Level Vs Current
-
-Conclusion :- We have studied the working of capacitance level probe
-and various level measurement methods through a simulation.
+Conclusion :- We have stucied the working of capacitance level probe
+‘and various lvel measurement methods through a simulation,
 EXPERIMENT NO. 5
 
-Aim :- To study hardware and software associated with PLC
+[Aim :-To study hardware and sofware associated with PLC
 
-Objective :- 1. Learn the basics and hardware components of PLC
+(Objective : 1, Leathe basics and hardware components of PLC
 2. Understand configuration of PLC system
-3. Study various building blocks of PLC
+2, Study various bung blocks of PLE
 
-Theory :- A Programmable Logic Controller, PLC or a Programmable
-controller is an electronic device used for automation of industrial
+Theory : A Programmable Logic Controller, PLC or a Programmable
+controler is an electronic device used for automation of industrial
 processes, such as control on machinery on factory assembly lines. A
-programmable controller is a digitally operating electronic apparatus
-which uses a programmable memory for the internal storage of
-instructions for implementing specific functions, such a_ logic,
-sequencing, timing, counting and arithmetic to control various machines
-or processes through digital or analog input/output devices. Unlike
-general purpose computers, the PLC is designed for multiple inputs and
+programmable controler is a digitally operating electronic apparatus
+Which uses 2 programmable memory for the intemal storage of
+instructions for implementing specifc funcions, such a lege,
+sequencing, timing, counting and arithmetic to contol various machines
+fr processes through digital or analog inputloutput deviees. Unike
+‘General purpose computers, the PLC is designed for mule inputs and
 outputs, extended temperature ranges, immunity to electrical noise and
 resistance to vibrations and impacts.
 
+SORORO)
+
 EXPERIMENT NO. 6
 
-Aim :- To understand a simple ladder program
+‘Aim :-To understand a simple ladder program
 
-Objective :- 1. Develop a ladder using standard procedure
-2. Solve the problem using ladder programming
+Objective: 1. Develop a ladder using standard procedure
+2. Solve the problem using adder programming
 
-Theory :- Ladder programming is a popular language of programming
-the PLCs. Ladder diagram shows the sequence of the logic execution
-which is presented diagrammatically. In the ladder diagram, there are
-two vertical lines, generally called phase, positive or neutral. Rungs
-which show current flow in horizontal direction are the sequence in which
-the logic executes. The Analogous to relay ladder has two main symbols
+‘Theory :- Ladder programming is @ popular language of programming
+the PLCS. Ladder diagram shows the sequence ofthe lagi execition
+whichis presented diagrammatically. In the ladder diagram. there are
+two vertical ines, generally caled phase, positive or neutal. Rungs
+which show current lw in horizontal direction are the sequence in which
+the logic executes. The Analogous to olay lade has wo main symbole
 which are contacts and output coil. Generally each rung has inputs
-(contacts) on the left hand side and outputs (coil) on the right hand side.
-These contacts and coils are called as bits of the relays. Each input and
-output are individual bits in I/O files. An instruction in the ladder instructs
-PLCs how to respond to the bits in I/O files which are stored in the
-memory. Input contacts are the condition area, the conditions must be
-fulfilled to change the status of the output coils. Each manufacturer of
-PLC systems has their own style of writing the instructions. Different
-PLCs have different instruction sets but even some common basic
-instructions are shared by all the PLCs. All manufacturers give different
-software packages for programming PLCs. Ladder is the most
+(contacts) on the left hand side and outputs (col) on the righthand side.
+‘These contacts and coils are called as bits ofthe relays. Each mput and
+output are individual bits in UO files. An instruction inthe ladder instructs
+PLCs how to respond to the bts in UO fles which are stored in the
+‘memory. Input contacts are the condtion area, the conditons must be
+full to change the status of the ouput cols. Each manufacturer of
+PLC systems has their own style of witing the instructons. Different
+PLCs have diferent instruction sets but even some common basic
+instructions are shared by all the PLCS. All manufacturers give diferent
+Software packages for programming PLCs. Ladder is the most
 commonly used programming language. Prior to PLCs, relay logic was
-used in industry. Ladders were developed to mimic or imitate relay logic.
-Relay Logic / Instructions. A relay is a simple magnetic device which
-acts as a control switch. When the switch is on, current will flow through
-the coil on the iron piece. This iron core acts as an electromagnet and
-due to the magnetic field upper contact gets attracted towards lower one
-and circuit gets completed, allowing current to flow from load.
-AND Gate
-
-OR Gate
+sed in industry, Ladders ware daveloped to mimic or imitate relay logic.
+Relay Logic / Insructons. A relay isa simple magnetic device which
+facts a conto eviteh. When the switch i on, curent wil flow though
+‘he coll onthe iron piece. This iron core acts as an electromagnet and
+‘ue tothe magnetic fed upper contact gts atracted towards lower one
+‘and circuit gots completed, allowing current to flow trom load,
 
 NOT Gate
 
 Conclusion :- We have implemented the logic gates in the ladder
-programming using a simulator.
+programming using a simulator
 
 EXPERIMENT NO. 7
 
-Aim :- To develop and application using On-Delay timer
+[Aim :-To develop and appication using Or-Delay timer
 
-Objective :- 1. Study the timing diagram of On-Delay timer
-2. Solve the assignment of Ton timer
+Objective: 1. Study the timing diagram of On-Delay timer
+2 Solve the assignment of Ton timer
 
-Theory :- It is used when an action is to begin a specified time after the
-input becomes true. Consider an example wherein a certain step in the
-manufacturing process is to begin 30 seconds after a signal is received
-from a limit switch. The 30 seconds delay is the ON-delay timer's preset
-value. The figure below shows a symbolic representation of the timer.
+‘Theory : It's used when an action isto begin a specified time ater the
+input becomes tru. Consider an example wherein a certain step inthe
+‘manufacturing process is to begin 30 seconds after a signals received
+froma limit switch. The 30 seconds delay isthe ON-delay timers preset
+value. The fgure below shows a symbolic representation ofthe timer.
 
-Result :-
+Result =
 
-Conclusion :- We have developed an application of TON Timer using
+Conclusion :- We have developed an appicaton of TON Timer using
 the simulation
 
 EXPERIMENT NO. 8
 
-Aim :- To develop an application using Off-Delay timer
+[Aim :-To develop an application using OF Delay timer
 
-Objective :- 1. Study the timing diagram of Off-Delay timer
+Objective: 1. Study the timing diagram of Of Delay timer
 2. Solve the assignment of TOFF timer
 
-Theory :- Consider an example where the contents of a storage tank are
-to be transferred to further process. When the low level is detected by
-the level switch the outlet valve is to be closed. To allow entire contents
+‘Theory := Consider an example where the contents of storage tank are
+to be transferred to futher process. When the low lovel is detected by
+the level eich the aut valve i fo be closed. To alow entire contents
 to drain out, some time delay is needed as the level switch is installed
-slightly above the tank bottom level. This can be achieved by using an
-off delay timer. Consider an example that, there is a Low level switch to
-a tank, and we have to close the drain valve of the tank after a 5 second
-delay when low level is reached. In this case this 5 seconds delay can
-be given using an off delay timer as we have to close the drain valve
-after delay.
+slightly above the tank botom level. This can be achieved by using an
+Of dolay timer. Consider an example that, there is @ Low love switch to
+tank, and we have to close the dain valve of the tank ater a § second
+lay when low lvel is reached. In this case this § seconds delay can
+be given using an off delay timer as we have fo cose the dain valve
+ser delay
 
-Result :-
+Result =
 
 Conclusion :- We have developed an application of TOFF timer using
-the simulation.
+the simulation
 
 EXPERIMENT NO. 9
 
-Aim :- To develop an application using Up/Down counter
+[Aim :-To develop an application using UpiDown counter
 
-Objective :- 1. Study counter timing diagram
-2. Develop an application specific ladder program using
-counters
+Objective: 1. Study counter timing diagram
+2. Develop an application specif ladder program using
 
-Theory :- Counters are used to count the number of objects or to count
-cycles of a typical process. Consider an example of a bottle filling plant,
-in that the counter is used to count the number of bottles filled in a
-particular batch. In counter instruction the accumulated value will
-increase only when it completes the transition from open to close or vice
-versa. It doesn't check how long the contact stays closed, it only looks
-for the transition. In the Up counter when contact change over takes
-place accumulator value increments by one. While in down counter
-when changeover takes place, the accumulator value decreases by one.
+‘Theory :- Counters are used to count the number of abjacts orto count
+cycle ofa typical process. Consider an exampie of a bot filing plat,
+in that the counter fs used fo count the number of botles filed in
+paricular batch. In counter instucton the accumulated value will
+increase only when it competes the transition fom open o close or vice
+versa. It dossnit check how long the contact stays closed, it only looks
+for the transtion. In the Up counter when contact change over takes
+place accumulator value increments by one. Whie in down counter
+winen changeover takes place the accumulator value decreases by one.
 
-Result :-
+Rest
 
 Conclusion :- We have developed an application of Up/Down counter
-using simulation.
+Using simulation
