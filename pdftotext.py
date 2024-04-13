@@ -5,8 +5,8 @@ from PIL import Image
 from pdf2image import convert_from_path
 
 current_directory = os.getcwd()
-submissions_directory = "./submissions"
-processed_directory = "./processed_submissions"
+submissions_directory = "./submissions/"
+processed_directory = "./processed_submissions/"
 
 if not os.path.exists(processed_directory):
     os.makedirs(processed_directory)
@@ -14,7 +14,7 @@ if not os.path.exists(processed_directory):
 
 files = os.listdir(submissions_directory)
 pdf_files = [file for file in files if file.endswith('.pdf')]
-print(pdf_files)
+# print(pdf_files)
 
 # tesseract_cmd = os.path.join(current_directory, 'env', 'bin', 'pytesseract', 'tesseract')
 

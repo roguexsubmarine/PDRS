@@ -32,6 +32,24 @@ def calculate_similarity(p):
             file_path = os.path.join(p, filename)
             file_names.append(filename)
             import PyPDF2
+            #fxn to skip images since they'll already be detected by ocr
+            def has_images(pdf_path):
+                try:
+                    with open(pdf_path, "rb") as pdf_file:
+                        pdf_reader = PyPDF2.PdfReader(pdf_file)
+                        for page_num in range(len(pdf_reader.pages)):
+                            page = pdf_reader.pages[page_num]
+                            resources = page['/Resources']
+                            if '/XObject' in resources:
+                                x_objects = resources['/XObject']
+                                for obj in x_objects:
+                                    if x_objects[obj]['/Subtype'] == '/Image':
+                                        return True
+                        return False
+                except Exception as e:
+                    return False
+            if(has_images(file_path)==True):
+                break
             pdfFileObject = open(file_path, 'rb')
             reader = PyPDF2.PdfReader(pdfFileObject)
             count = len(reader.pages)
