@@ -150,7 +150,7 @@ def extract():
             sorted_data = sorted_data[::-1]
             session['sorted_data'] = sorted_data
             session['stmts'] = stmts
-            
+
 
             return redirect("/result")
             
@@ -205,6 +205,8 @@ def single_comparison():
 @app.route("/compare", methods=['POST'])
 def compare():
     print("comparing...")
+
+    # stmts = session.get('stmts', None)
 
     student1 = request.form['student1']
     student2 = request.form['student2']

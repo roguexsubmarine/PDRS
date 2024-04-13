@@ -13,3 +13,6 @@ networkx
 bs4
 pdfkit
 fpdf
+docx
+python-docx
+nbformat
