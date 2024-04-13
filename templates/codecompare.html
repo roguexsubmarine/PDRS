@@ -55,11 +55,11 @@
         <tbody>
             {% for n in range(l) %}
             <tr>
-                {% if text1[n].startswith('*') %}<td class="table-danger">{{ text1[n] }}</td>{% endif %}
-                {% if text1[n].startswith('~') %}<td class="table-success">{{ text1[n] }}</td>{% endif %}
+                {% if text1[n].startswith('*') %}<td class="table-danger">{{ text1[n][1:] }}</td>{% endif %}
+                {% if text1[n].startswith('~') %}<td class="table-success">{{ text1[n][1:] }}</td>{% endif %}
 
-                {% if text2[n].startswith('*') %}<td class="table-danger">{{ text2[n] }}</td>{% endif %}
-                {% if text2[n].startswith('~') %}<td class="table-success">{{ text2[n] }}</td>{% endif %}
+                {% if text2[n].startswith('*') %}<td class="table-success">{{ text2[n][1:] }}</td>{% endif %}
+                {% if text2[n].startswith('~') %}<td class="table-danger">{{ text2[n][1:] }}</td>{% endif %}
             </tr>
             {% endfor %}
 
