@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2 class="page-head">Results</h2>
+
+<img src="../static/analysis.jpg" alt="analysis image" class="head-animation" style="max-width: 300px; max-height: 300px;">
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="/list">Detailed</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/heatmap">Heat Map</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/cluster">Cluster</a>
+    </li>
+</ul>
+
+<style>
+    .table {
+        font-size: smaller;
+        width: 90vw;
+        overflow-x: scroll;
+    }
+
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        white-space: nowrap;
+        overflow-x: auto;
+        max-width: 100px;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .percentage {
+        text-align: center;
+    }
+
+</style>
+
+<div class="result-content">
+
+    <table class="table" style="border-color: transparent;">
+        <thead>
+            <tr>
+                <th scope="col">{{ student1 }}</th>
+                <th scope="col">{{ student2 }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for n in range(l) %}
+            <tr>
+                {% if text1[n].startswith('*') %}<td class="table-danger">{{ text1[n] }}</td>{% endif %}
+                {% if text1[n].startswith('~') %}<td class="table-success">{{ text1[n] }}</td>{% endif %}
+
+                {% if text2[n].startswith('*') %}<td class="table-danger">{{ text2[n] }}</td>{% endif %}
+                {% if text2[n].startswith('~') %}<td class="table-success">{{ text2[n] }}</td>{% endif %}
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
