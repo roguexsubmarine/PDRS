@@ -10,6 +10,19 @@ from plagiarism import calculate_similarity
 from scrape_code import get_code
 from scrape_subjective import get_data
 from codediff import codediff
+from scrape_code import get_code
+from scrape_subjective import get_data
+from flask_bcrypt import Bcrypt
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
+from flask_login import current_user,LoginManager
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, SelectField, DateField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, NumberRange
+from datetime import datetime
+#from models import User
+#from forms import regform,loginform
+from flask_login import login_user , current_user , logout_user ,login_required ,UserMixin,LoginManager
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
@@ -17,12 +30,52 @@ app = Flask(__name__)
 if __name__ == '__main__':
     app.run(debug=True)
 
-
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'
 Session(app)
+db=SQLAlchemy(app)
+bcrypt=Bcrypt(app)
+login_manager=LoginManager(app)
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+class User(db.Model,UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(20),unique=True, nullable=False)
+    email= db.Column(db.String(120),unique=True, nullable=False)
+    password=db.Column(db.String(120),nullable=False)
+
+    def repr(self):
+        return f"User('{self.name}','{self.email}')"
+
+class regform(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Sign Up')
+
+    def validate_name(self, name):
+        user = User.query.filter_by(name=name.data).first()
+        if user:
+            raise ValidationError('That username is already been taken.Please try some other username')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('That email is already been taken.Please try some other email')
+        
+class loginform(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Login')
 
 @app.after_request
 def after_request(response):
@@ -35,7 +88,7 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return redirect('/home')
+    return redirect('/login')
 
 @app.route("/home")
 def home():
@@ -54,34 +107,40 @@ def adduser():
         return render_template('home.html', error="Passwords do not match")
     return render_template("login.html")
 
-@app.route("/login", methods=['GET', 'POST'])
+
+@app.route("/student")
+def student():
+    return render_template("student.html")
+
+
+
+@app.route("/login", methods=['POST','GET'])
 def login():
-    if request.method == 'GET':
-        return render_template("login.html")
-    # if request.method == 'POST':
 
-@app.route("/authenticate", methods=['POST'])
-def authenticate():
-    print("in authenticate")
-    if request.method == 'POST':
-        print("in authenticate post")
-        username = request.form['name']
-        email = request.form['email']
-        password = request.form['password']
-        cpassword = request.form['cpassword']
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form=loginform()
+    if form.validate_on_submit():
+        user=User.query.filter_by(name=form.name.data , email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password,form.password.data):
+            return redirect(url_for('home'))
         
-        conn = sqlite3.connect('users.db')
+        else:
+            flash('Incorrect Login Credentials. Please check your Login details', 'danger')
+    return render_template('log.html',title='Login',form=form)
 
-        return redirect('/home')
-    else:
-        print("in authenticate get")
-        return render_template("login.html")
 
-@app.route("/register", methods=['GET','POST'])
-def register():
-    print("in register")
-    return render_template("register.html")
-
+@app.route("/register", methods=['POST','GET'])
+def signup():
+    form =regform()
+    if  form.validate_on_submit():
+        hashedpassword=bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user=User(name=form.name.data,email=form.email.data,password=hashedpassword)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created. Go to Login to login to your account!', 'success')
+        return redirect(url_for('home'))
+    return render_template('reg.html',title='Register',form=form)
 
 def clear_submissions_directory():
     submissions_folder = os.path.join(os.getcwd(), 'submissions')
@@ -282,3 +341,4 @@ def download_pdf_image():
     pdf_file = os.path.join(app.root_path, 'static', 'images.pdf')
     pdf.output(pdf_file)
     return send_file(pdf_file, as_attachment=True)
+

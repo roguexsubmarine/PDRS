@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2 class="page-head">Register</h2>
+
+        <img src="../static/login.jpg" alt="login image" class="head-animation" style="max-height: 250px;">
+
+        <form action="{{ url_for('signup') }}" method="POST" class="file_form">
+            {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Create Account</legend>
+                    <div class="form-group">
+                        <label for="name" class="form-control-label">Name</label>
+
+                        {% if form.name.errors %}
+                            <input type="text" name="name" id="name" class="form-control form-control-lg is-invalid">
+                            <div class="invalid-feedback">
+                                {% for error in form.name.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <input type="text" name="name" id="name" class="form-control form-control-lg">
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-control-label">Email</label>
+
+                        {% if form.email.errors %}
+                            <input type="email" name="email" id="email" class="form-control form-control-lg is-invalid" >
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <input type="email" name="email" id="email" class="form-control form-control-lg">
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-control-label">Password</label>
+
+                        {% if form.password.errors %}
+                            <input type="password" name="password" id="password" class="form-control form-control-lg is-invalid">
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <input type="password" name="password" id="password" class="form-control form-control-lg">
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password" class="form-control-label">Confirm Password</label>
+
+                        {% if form.confirm_password.errors %}
+                            <input type="password" name="confirm_password" id="confirm_password" class="form-control form-control-lg is-invalid">
+                            <div class="invalid-feedback">
+                                {% for error in form.confirm_password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <input type="password" name="confirm_password" id="confirm_password" class="form-control form-control-lg">
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                </div>
+
+                <a href="/student">Are you a Student ?</a>
+        </form>
+{% endblock content %}
