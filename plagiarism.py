@@ -47,6 +47,8 @@ def calculate_similarity(p):
     vectorizer.fit(lst)
     cvectorizer.fit(lst)
 
+
+
     #comment this out l8r
     # print("Vocabulary: ", vectorizer.vocabulary_)
 
@@ -95,7 +97,7 @@ def calculate_similarity(p):
     for pair in similarities:
         index1 = df.index[pair[0]]
         index2 = df.index[pair[1]]
-        similarity_score = pair[2] 
+        similarity_score = round(pair[2] * 100, 2)
         # print(f"Similarity between vectors {index1} and {index2}: {similarity_score}")
         simlist.append([index1,index2,similarity_score])
         
@@ -103,6 +105,9 @@ def calculate_similarity(p):
     import seaborn as sns 
 
     index=df.index
+    hdf=df
+    hdf.index = np.arange(1,len(hdf)+1)
+    hindex=hdf.index
 
 
     n = len(index)
@@ -167,10 +172,10 @@ def calculate_similarity(p):
         i, j, similarity_score = pair
         similarity_matrix[i, j] = similarity_score
         similarity_matrix[j, i] = similarity_score
-
+    print(hdf.head())
     #check colormaps once
     plt.figure(figsize=(10,8))
-    sns.heatmap(similarity_matrix, annot=True, fmt=".2f", xticklabels=index, yticklabels=index, cmap="YlGnBu")
+    sns.heatmap(similarity_matrix, annot=True, fmt=".2f", xticklabels=hindex, yticklabels=hindex, cmap="YlGnBu")
     plt.title("Similarity Matrix")
     plt.xlabel("Files")
     plt.ylabel("Files")
@@ -183,7 +188,7 @@ def calculate_similarity(p):
     
 
     # print(simlist)
-    return simlist
+    return simlist, lst
 
 # p=input("Enter the directory path: ")
 

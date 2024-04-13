@@ -1,0 +1,60 @@
+<style>
+  .table{
+      font-size:smaller;
+      width: 100%;
+      /* max-width: 750px; */
+      overflow-x: scroll;
+  }
+
+  td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      white-space: nowrap; /* Prevent text wrapping */
+      overflow-x: auto;/* Enable horizontal scrolling*/
+      overflow-x: hidden;
+      max-width: 100px;
+  }
+  th{
+    padding-left: 5px;
+  }
+
+  /* Center the image */
+  .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* This is optional, it makes the image centered vertically on the page */
+  }
+</style>
+
+<div class="result-content">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Submission 1</th>
+      <th scope="col">Submission 2</th>
+      <th scope="col">Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+
+      <th scope="row">{{ loop.index }}</th>
+      <td class="tcell">{{ i[0] }}</td>
+      <td class="tcell">{{ i[1] }}</td>
+      <td>{{ i[2] }}</td>
+    </tr>
+    {% endfor %}
+
+
+  </tbody>
+</table>
+
+<!-- <img src="./static/clustermap.png" alt=""></img> -->
+<!-- <div class="center">
+  <img src="./static/clustermap.png" alt="Your Image">
+</div> -->
+
+</div>

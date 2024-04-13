@@ -11,3 +11,5 @@ seaborn
 matplotlib
 networkx
 bs4
+pdfkit
+fpdf
