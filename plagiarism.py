@@ -208,10 +208,14 @@ def calculate_similarity(p):
     output_filename = "./static/similarityheatmap.png"
     plt.savefig(output_filename, format="png")
     plt.close() 
+
+    third_elements = [sublist[2] for sublist in simlist]
+    plaghighest = max(third_elements)
+
     
 
     # print(simlist)
-    return simlist, lst
+    return simlist, lst, plaghighest
 
 # p=input("Enter the directory path: ")
 
