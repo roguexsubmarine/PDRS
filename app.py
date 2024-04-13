@@ -9,6 +9,7 @@ from zipfile import ZipFile
 from plagiarism import calculate_similarity
 from scrape_code import get_code
 from scrape_subjective import get_data
+from codediff import codediff
 
 
 app = Flask(__name__)
@@ -141,11 +142,15 @@ def extract():
 
             p = zip_path.replace('.zip', '')
             print(p)
-            data = calculate_similarity(p)
+            session['path_to_files'] = p
+            data,stmts = calculate_similarity(p)
+
 
             sorted_data = sorted(data, key=lambda x: x[2])
             sorted_data = sorted_data[::-1]
             session['sorted_data'] = sorted_data
+            session['stmts'] = stmts
+            
 
             return redirect("/result")
             
@@ -196,3 +201,89 @@ def single_comparison():
     # print(newdata)
     return render_template("singlecomparison.html", data=newdata)
 
+
+@app.route("/compare", methods=['POST'])
+def compare():
+    print("comparing...")
+
+    student1 = request.form['student1']
+    student2 = request.form['student2']
+
+    path = session.get('path_to_files', None)
+
+    full_path1 = path + "/" + student1
+    full_path2 = path + "/" + student2
+
+    print(full_path1)
+
+    texts = codediff(full_path1, full_path2)
+    text1=texts[0]
+    text2=texts[1]
+    l = min(len(text1), len(text2))
+
+    if len(text1) > len(text2):
+        remaining = 1
+    else:
+        remaining = -1
+
+    
+
+    # print(texts[0])
+
+    return render_template("codecompare.html", text1=text1, text2=text2, student1=student1, student2=student2, l=l, remaining=remaining)
+
+
+
+
+
+
+
+
+
+from flask import send_file
+import pdfkit
+from jinja2 import Environment, FileSystemLoader
+
+@app.route('/download_pdf')
+def download_pdf():
+    # 1. Retrieve data from the database (replace this with your database query)
+    data = session.get('sorted_data', None)
+
+    # 2. Create a Jinja2 environment and load the template
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('./templates/template.html')
+
+    # 3. Render the template with the dynamic data
+    html_content = template.render(data=data)
+
+    # 4. Convert HTML content to PDF
+    pdf_file_path = './static/output.pdf'  # Provide the desired path to save the PDF
+    pdfkit.from_string(html_content, pdf_file_path)
+
+    # 5. Send the PDF file as an attachment
+    return send_file(pdf_file_path, as_attachment=True)
+
+
+
+
+from fpdf import FPDF
+
+@app.route('/download_pdf_image')
+def download_pdf_image():
+    #image_path = os.path.join(app.root_path, 'static', 'clustermap.png')
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    images= ['clustermap.png','similarityheatmap.png']
+    page_width = 210  # Width of the page in mm
+    image_width = 105  # Width of each image in mm
+    # right_margin = 10 
+    for index, image in enumerate(images):
+        image_path = os.path.join(app.root_path, 'static', image)
+        x = (page_width - image_width)/2
+        y = 10 + index * 100
+        pdf.image(image_path, x=x, y=y, w=image_width)
+
+    pdf_file = os.path.join(app.root_path, 'static', 'images.pdf')
+    pdf.output(pdf_file)
+    return send_file(pdf_file, as_attachment=True)

@@ -7,6 +7,17 @@
 
     <img src="../static/analysis.jpg" alt="analysis image" class="head-animation" style="max-width: 300px; max-height: 300px;">
 
+    <form action="/download_pdf" method="get">
+      <button type="submit" class="btn btn-primary">Generate Report</button>
+    </form>
+
+    <br>
+
+    <form action="/download_pdf_image" method="get">
+      <button type="submit" class="btn btn-primary">Generate Result PDF</button>
+    </form>
+
+    <br>
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -75,6 +86,15 @@
                 <input type="submit" value="{{ i[1] }}" class="btn btn-outline-dark">
               </form> 
             </td>
+
+            <td class="tcell">
+              <form action="{{ url_for('compare') }}", method="POST">
+                <input type="text" name="student1" id="student1" value="{{ i[0] }}" hidden>
+                <input type="text" name="student2" id="student2" value="{{ i[1] }}" hidden>
+                <input type="submit" value="Compare" class="btn btn-outline-primary">
+              </form> 
+            </td>
+
             <td class="percentage">{{ i[2] }}</td>
           </tr>
           {% endfor %}
