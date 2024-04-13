@@ -13,11 +13,21 @@ def calculate_similarity(p):
     ext = ('.py', '.c', '.cpp', '.txt', '.ipynb','.java','.html')
     lst=[]
     file_names=[]
-
     #implement stopwords later
 
     #parsing files from dir try to optimize plz
     for filename in os.listdir(p):
+        if filename.endswith('.docx'):
+            file_path = os.path.join(p, filename)
+            file_names.append(filename)
+            import docx
+            doc = docx.Document(file_path)
+            text = ''
+            for paragraph in doc.paragraphs:
+                text += paragraph.text + '\n'
+            lst.append(text)
+                
+                
         if filename.endswith('.pdf'):
             file_path = os.path.join(p, filename)
             file_names.append(filename)
