@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report</title>
+{% extends 'layout.html' %}
+  
+  {% block content %}
 
+  <h2 class="page-head">Analysis</h2>
 
+    <div class="report"> 
     <style>
 
         .report{
@@ -21,9 +20,19 @@
             max-width: 1400px;
             min-height: 100px;
             border-radius: 10px;
-            background-color: antiquewhite;
+            color: white;
+            font-size: large;
             margin-top: 20px;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 100vw;
+            background: rgb(2,0,36);
+background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%); 
+
         }
 
         .visual{
@@ -51,25 +60,49 @@
             border-color: transparent;
         }
 
+        .v_button{
+            width: 50vw;
+            max-width: 400px;
+        }
+
+
     </style>
-</head>
-<body>
-    <div class="report">
+
+
+<script>
+
+    function cm_redirect(){
+        window.location.href = '/cluster';
+    }
+
+    function cm_redirect(){
+        window.location.href = '/heatmap';
+    }
+    
+    function cm_redirect(){
+        window.location.href = '/list';
+    }
+
+
+
+    
+</script>
+
 
         <div class="dash">
-            <p>Analysis Name</p>
-            <p>Programming Language</p>
-            <p>Top Plagiarism Flagged : 00%</p>
-            <button onclick="window.print()" class="btn btn-primary">Generate Report</button>
+            <p class="report-prog">Programming Language</p>
+            <p class="report-percent">Top Plagiarism Flagged : 00%</p>
+            <button onclick="window.print()" class="btn btn-primary v_button">Generate Report</button>
+            <button onclick="lt_redirect()" class="btn btn-primary v_button">View Detailed Report</button>
 
 
         </div>
     
         <div class="visual">
-            <button class="visual_button" onclick="window.print()">
+            <button class="visual_button" id="hm" onclick="hm_redirect()">
             <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
             </button>
-            <button class="visual_button">
+            <button class="visual_button" id="cm" onclick="cm_redirect()">
                 <img src="../static/clustermap.png" alt="cluster Map" class="visual_element">
             </button>
         </div>
@@ -77,7 +110,8 @@
         <div class="list">
     
             <div class="result-content">
-                <table class="table table-striped">
+                <table class="table 
+                table-striped">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -104,6 +138,6 @@
 
     </div>
     
-    
-</body>
-</html>
+    </div>
+
+    {% endblock content %}

@@ -169,7 +169,7 @@ def result():
     if data is None:
         return "Data not found. Please sort first."
     # print(data)
-    return redirect("/list")
+    return render_template("report.html", data=data)
 
 @app.route("/list")
 def list():
@@ -231,11 +231,6 @@ def compare():
     # print(texts[0])
 
     return render_template("codecompare.html", text1=text1, text2=text2, student1=student1, student2=student2, l=l, remaining=remaining)
-
-
-
-
-
 
 
 
