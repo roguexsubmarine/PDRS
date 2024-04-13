@@ -10,7 +10,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 def calculate_similarity(p):
     print("checking similarity ...")
         
-    ext = ('.py', '.c', '.cpp', '.txt', '.ipynb','.java','.html')
+    ext = ('.py', '.c', '.cpp', '.txt','.java','.html')
     lst=[]
     file_names=[]
     #implement stopwords later
@@ -40,6 +40,19 @@ def calculate_similarity(p):
                 page = reader.pages[i]
                 output += page.extract_text()
             lst.append(output)
+        
+        if filename.endswith('.ipynb'):
+            file_path = os.path.join(p, filename)
+            file_names.append(filename)
+            import nbformat
+            notebook = nbformat.read(file_path, as_version=4)
+            source_code = []
+            for cell in notebook.cells:
+                if cell.cell_type == 'code':
+                    source_code.append(cell.source)
+    
+            notebook_text = '\n'.join(source_code)
+            lst.append(notebook_text)
             
         if filename.endswith(ext):
             file_path = os.path.join(p, filename)
