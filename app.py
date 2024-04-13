@@ -222,7 +222,7 @@ def extract():
             sorted_data = sorted_data[::-1]
             session['sorted_data'] = sorted_data
             session['stmts'] = stmts
-            session['plag_high'] = plag_highest
+            session['plag_highest'] = plag_highest
 
 
 
@@ -242,7 +242,7 @@ def result():
     if data is None:
         return "Data not found. Please sort first."
     # print(data)
-    return render_template("report.html", data=data, plag_high=plag_high)
+    return render_template("report.html", data=data, plag_highest=plag_highest)
 
 @app.route("/list")
 def list():
