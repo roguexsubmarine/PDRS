@@ -7,6 +7,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import random, shutil
 from zipfile import ZipFile
 from plagiarism import calculate_similarity
+from scrape_code import get_code
+from scrape_subjective import get_data
 
 
 app = Flask(__name__)
@@ -106,6 +108,8 @@ def extract():
     if file:
         # Check if the file is a ZIP file
         if file.filename.endswith('.zip'):
+            assignment_aim = request.form['assignment_aim']
+            prog_lang = request.form['prog_lang']
             # Check if the 'submissions' directory exists, if not, create it
             submissions_folder = os.path.join(os.getcwd(), 'submissions')
             if not os.path.exists(submissions_folder):
@@ -126,6 +130,15 @@ def extract():
 
             # File uploaded and extracted successfully!
             print(zip_path)
+            
+            if (prog_lang == '0'):
+                print("Fetching Answers from the web \n\n\n")
+                get_data(assignment_aim)
+            else :
+                print(prog_lang)
+                print("Fetching Code from the web \n\n\n")
+                get_code(assignment_aim)
+
             p = zip_path.replace('.zip', '')
             print(p)
             data = calculate_similarity(p)

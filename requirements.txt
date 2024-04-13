@@ -10,3 +10,4 @@ pypdf2
 seaborn
 matplotlib
 networkx
+bs4
