@@ -23,6 +23,7 @@ from datetime import datetime
 #from forms import regform,loginform
 from flask_login import login_user , current_user , logout_user ,login_required ,UserMixin,LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from selenium1 import ai_detection
 
 
 app = Flask(__name__)
@@ -154,7 +155,6 @@ def clear_submissions_directory():
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
 
-
 @app.route("/extract", methods=['POST'])
 def extract():
     if 'file' not in request.files:
@@ -162,13 +162,18 @@ def extract():
 
     file = request.files['file']
 
+    print("extracting...")
+
     if file.filename == '':
         return redirect(request.url)
 
     if file:
         # Check if the file is a ZIP file
         if file.filename.endswith('.zip'):
+
+            print("checked zip")
             assignment_aim = request.form['assignment_aim']
+            print("assignment aim : ", assignment_aim)
             prog_lang = request.form['prog_lang']
             # Check if the 'submissions' directory exists, if not, create it
             submissions_folder = os.path.join(os.getcwd(), 'submissions')
@@ -176,6 +181,7 @@ def extract():
                 os.makedirs(submissions_folder, exist_ok=True)
             
             clear_submissions_directory()
+            print("clear earlier directory")
 
             # Save the ZIP file to the submissions folder
             zip_path = os.path.join(submissions_folder, file.filename)
@@ -191,6 +197,11 @@ def extract():
             # File uploaded and extracted successfully!
             print(zip_path)
             
+            # prog_lang = '0'
+
+            
+            p = zip_path.replace('.zip', '')
+            print(p)
             if (prog_lang == '0'):
                 print("Fetching Answers from the web \n\n\n")
                 get_data(assignment_aim)
@@ -198,9 +209,11 @@ def extract():
                 print(prog_lang)
                 print("Fetching Code from the web \n\n\n")
                 get_code(assignment_aim)
+            # calling ai
+            if assignment_aim:
+                ai_detection(assignment_aim, p)
 
-            p = zip_path.replace('.zip', '')
-            print(p)
+
             session['path_to_files'] = p
             data,stmts = calculate_similarity(p)
 
@@ -209,7 +222,7 @@ def extract():
             sorted_data = sorted_data[::-1]
             session['sorted_data'] = sorted_data
             session['stmts'] = stmts
-            
+
 
             return redirect("/result")
             
@@ -218,7 +231,6 @@ def extract():
             return "Uploaded file is not a ZIP file."
 
     return redirect("/home")
-
 
 @app.route("/result")
 def result():
@@ -341,4 +353,13 @@ def download_pdf_image():
     pdf_file = os.path.join(app.root_path, 'static', 'images.pdf')
     pdf.output(pdf_file)
     return send_file(pdf_file, as_attachment=True)
+
+@app.route("/chatgpt")
+def chatgpt():
+    # assignment_aim = session.get('assignment_aim', None)
+    assignment_aim = "taylor swift"
+    filepath = session.get('path_to_files', None)
+
+    ai_detection(assignment_aim, filepath)
+
 
