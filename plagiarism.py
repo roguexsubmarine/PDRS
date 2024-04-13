@@ -50,10 +50,10 @@ def calculate_similarity(p):
                 
         if filename.endswith('.pdf'):
             file_path = os.path.join(p, filename)
-            file_names.append(filename)
             #fxn to skip images since they'll already be detected by ocr
             if(has_images(file_path)==True):
                 break
+            file_names.append(filename)
             pdfFileObject = open(file_path, 'rb')
             reader = PyPDF2.PdfReader(pdfFileObject)
             count = len(reader.pages)

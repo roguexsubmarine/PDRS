@@ -6,9 +6,10 @@ import sqlite3
 from werkzeug.security import check_password_hash, generate_password_hash
 import random, shutil
 from zipfile import ZipFile
-from plagiarism import calculate_similarity
+from plagiarism import calculate_similarity, has_images
 from scrape_code import get_code
 from scrape_subjective import get_data
+from pdftotext import pdfwriter
 
 
 app = Flask(__name__)
@@ -140,7 +141,9 @@ def extract():
                 get_code(assignment_aim)
 
             p = zip_path.replace('.zip', '')
+            print("test1\n\n\n")
             print(p)
+            pdfwriter(p)
             data = calculate_similarity(p)
 
             sorted_data = sorted(data, key=lambda x: x[2])
