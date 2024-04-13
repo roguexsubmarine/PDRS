@@ -13,8 +13,6 @@ def calculate_similarity(p):
     ext = ('.py', '.c', '.cpp', '.txt', '.ipynb','.java','.html')
     lst=[]
     file_names=[]
-    fullText = []
-
     #implement stopwords later
 
     #parsing files from dir try to optimize plz
