@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2 class="page-head">Plagiarism Detection</h2>
+
+        <video src="../static/animation1.mp4" autoplay muted loop class="head-animation">
+            Your Browser does not support the video tag.
+        </video>
+        <p>
+            Compare your File !
+        </p>
+        <br>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('extract') }}" class="file_form">
+            <input type="file" name="file" id="file" class="form-control" placeholder="upload a file" required>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="assignment_aim" id="assignment_aim" placeholder="Describe the assignment in short"></textarea>
+
+            <br>
+    
+          
+          <input type="submit" name="submit_file" id="submit_file" class="btn btn-primary" value="Analyze" onclick="loader()">
+        </form>
+{% endblock content %}

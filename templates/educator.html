@@ -12,6 +12,7 @@
         <br>
         <form method="POST" enctype="multipart/form-data" action="{{ url_for('extract') }}" class="file_form">
             <input type="file" name="file" id="file" accept=".zip" class="form-control" placeholder="upload a file (*.zip)" required>
+            <input type="text" name="analysis_name" id="analysis_name" class="form-control" placeholder="Analysis Name">
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="assignment_aim" id="assignment_aim" placeholder="Describe the assignment in short"></textarea>
 
             <br>

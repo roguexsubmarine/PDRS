@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+  
+  {% block content %}
+
+  <h2 class="page-head">Analysis</h2>
+
+    <div class="report"> 
+    <style>
+
+        .report{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .dash{
+            width: 95vw;
+            max-width: 1400px;
+            min-height: 100px;
+            border-radius: 10px;
+            color: white;
+            font-size: large;
+            margin-top: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 100vw;
+            background: rgb(2,0,36);
+background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%); 
+
+        }
+
+        .visual{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .visual_element{
+            flex: 1;
+            padding: 30px;
+            max-width: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            border-radius: 25px;
+            aspect-ratio: 4/3;
+        }
+
+        .visual_button{
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        .v_button{
+            width: 50vw;
+            max-width: 400px;
+        }
+
+
+    </style>
+
+
+<script>
+
+    function cm_redirect(){
+        window.location.href = '/cluster';
+    }
+
+    function cm_redirect(){
+        window.location.href = '/heatmap';
+    }
+    
+    function cm_redirect(){
+        window.location.href = '/list';
+    }
+
+
+
+    
+</script>
+
+
+        <div class="dash">
+            <p class="report-prog">Programming Language</p>
+            <p class="report-percent">Top Plagiarism Flagged : 00%</p>
+            <button onclick="window.print()" class="btn btn-primary v_button">Generate Report</button>
+            <button onclick="lt_redirect()" class="btn btn-primary v_button">View Detailed Report</button>
+
+
+        </div>
+    
+        <div class="visual">
+            <button class="visual_button" id="hm" onclick="hm_redirect()">
+            <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
+            </button>
+            <button class="visual_button" id="cm" onclick="cm_redirect()">
+                <img src="../static/clustermap.png" alt="cluster Map" class="visual_element">
+            </button>
+        </div>
+    
+        <div class="list">
+    
+            <div class="result-content">
+                <table class="table 
+                table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Submission 1</th>
+                      <th scope="col">Submission 2</th>
+                      <th scope="col">Percentage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in data %}
+                    <tr>
+                
+                      <th scope="row">{{ loop.index }}</th>
+                      <td class="tcell">{{ i[0] }}</td>
+                      <td class="tcell">{{ i[1] }}</td>
+                      <td>{{ i[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+    
+        </div>
+    
+
+    </div>
+    
+    </div>
+
+    {% endblock content %}
