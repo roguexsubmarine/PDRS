@@ -1,2 +1,2 @@
-__pycache__/app.cpython-311.pyc
-.venv
+__pycache__/*
+.venv/
