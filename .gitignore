@@ -8,6 +8,6 @@ Sparsematrix.csv
 
 
 # images
-static/top50words.png
-static/similarityheatmap.png
-static/clustermap.png
+/static/top50words.png
+/static/similarityheatmap.png
+/static/clustermap.png
