@@ -261,6 +261,10 @@ def heatmap():
 def cluster():
     return render_template("cluster.html")
 
+@app.route("/topwords")
+def topwords():
+    return render_template("topwords.html")
+
 
 @app.route("/singlecomparison", methods=['POST'])
 def single_comparison():

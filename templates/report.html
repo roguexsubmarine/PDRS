@@ -83,6 +83,10 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
         window.location.href = '/list';
     }
 
+    function tw_redirect(){
+        window.location.href = '/topwords';
+    }
+
 
 
     
@@ -97,14 +101,18 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
 
 
         </div>
-    
+
+        
+
         <div class="visual">
             <button class="visual_button" id="hm" onclick="hm_redirect()">
-            <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
+                <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
             </button>
+            
             <button class="visual_button" id="cm" onclick="cm_redirect()">
                 <img src="../static/clustermap.png" alt="cluster Map" class="visual_element">
             </button>
+            
         </div>
     
         <div class="list">
@@ -144,6 +152,12 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
         </div>
     
 
+    </div>
+
+    <div class="visual">
+        <button class="visual_button" id="cm" onclick="tw_redirect()">
+            <img src="../static/top50words.png" alt="Top Words" class="visual_element">
+        </button>
     </div>
     
     </div>
