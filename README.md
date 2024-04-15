@@ -18,9 +18,14 @@ flask run
 
 ## Team
 
-Abhijeet Jadhav
-Kapil Tangsali
-Aaryan Tokekar
-Yash Pawar
-Tanmayi Sulakhe
+Abhijeet Jadhav  
+
+Kapil Tangsali  
+
+Aaryan Tokekar  
+
+Yash Pawar  
+
+Tanmayi Sulakhe  
+
 Soham Vaze

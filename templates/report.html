@@ -83,6 +83,10 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
         window.location.href = '/list';
     }
 
+    function tw_redirect(){
+        window.location.href = '/topwords';
+    }
+
 
 
     
@@ -90,20 +94,28 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
 
 
         <div class="dash">
+<<<<<<< HEAD
+=======
+            <p class="report-prog">Programming Language : </p>
+>>>>>>> 52caca0866c4c9d01a7f7cb4c5164cfb9642ad4c
             <p class="report-percent">Top Plagiarism Flagged : {{ plag_highest }} %</p>
             <button onclick="window.print()" class="btn btn-primary v_button">Generate Report</button>
             <button onclick="lt_redirect()" class="btn btn-primary v_button">View Detailed Report</button>
 
 
         </div>
-    
+
+        
+
         <div class="visual">
             <button class="visual_button" id="hm" onclick="hm_redirect()">
-            <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
+                <img src="../static/similarityheatmap.png" alt="Heat Map" class="visual_element">
             </button>
+            
             <button class="visual_button" id="cm" onclick="cm_redirect()">
                 <img src="../static/clustermap.png" alt="cluster Map" class="visual_element">
             </button>
+            
         </div>
     
         <div class="list">
@@ -117,6 +129,7 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
                       <th scope="col">Submission 1</th>
                       <th scope="col">Submission 2</th>
                       <th scope="col">Percentage</th>
+                      <th scope="col">DIFF</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -127,6 +140,13 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
                       <td class="tcell">{{ i[0] }}</td>
                       <td class="tcell">{{ i[1] }}</td>
                       <td>{{ i[2] }}</td>
+                      <td class="tcell">
+                        <form action="{{ url_for('compare') }}", method="POST">
+                          <input type="text" name="student1" id="student1" value="{{ i[0] }}" hidden>
+                          <input type="text" name="student2" id="student2" value="{{ i[1] }}" hidden>
+                          <input type="submit" value="Compare" class="btn btn-outline-primary compare">
+                        </form> 
+                      </td>
                     </tr>
                     {% endfor %}
                   </tbody>
@@ -135,6 +155,12 @@ background: linear-gradient(169deg, rgba(2,0,36,1) 43%, rgba(9,9,121,1) 100%, rg
         </div>
     
 
+    </div>
+
+    <div class="visual">
+        <button class="visual_button" id="cm" onclick="tw_redirect()">
+            <img src="../static/top50words.png" alt="Top Words" class="visual_element">
+        </button>
     </div>
     
     </div>

@@ -1,2 +1,13 @@
-__pycache__/app.cpython-311.pyc
-.venv
+__pycache__/
+.venv/
+submissions/
+
+
+# files
+Sparsematrix.csv
+
+
+# images
+/static/top50words.png
+/static/similarityheatmap.png
+/static/clustermap.png

@@ -57,7 +57,7 @@ def gptscrape(initialprompt,gecko_driver_path1,p):
 
 
     # p = input("Enter string: ")
-    prompt1 = "generate 3 ways to ask the question : " + initialprompt
+    prompt1 = 'generate 3 ways to ask the question enclosed in "" ' + initialprompt
     search(p,prompt1,i)
     i+=1
 

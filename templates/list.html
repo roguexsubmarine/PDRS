@@ -7,15 +7,6 @@
 
     <img src="../static/analysis.jpg" alt="analysis image" class="head-animation" style="max-width: 300px; max-height: 300px;">
 
-    <form action="/download_pdf" method="get">
-      <button type="submit" class="btn btn-primary">Generate Report</button>
-    </form>
-
-    <br>
-
-    <form action="/download_pdf_image" method="get">
-      <button type="submit" class="btn btn-primary">Generate Result PDF</button>
-    </form>
 
     <br>
 
@@ -29,6 +20,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/cluster">Cluster</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/topwords">Top Words</a>
+      </li>
     </ul>
 
     <style>
@@ -55,6 +49,12 @@
           text-align: center;
         }
 
+        .compare{
+          width: 100%;
+        }
+
+
+
 
     </style>
 
@@ -66,6 +66,7 @@
             <th scope="col">Submission 1</th>
             <th scope="col">Submission 2</th>
             <th scope="col"><input type="checkbox" name="reverse" id="reverse" onchange="reverseTable()">  Percentage</th>
+            <th scope="col">DIFF</th>
           </tr>
         </thead>
         <tbody id="tableBody">
@@ -87,15 +88,17 @@
               </form> 
             </td>
 
+            <td class="percentage">{{ i[2] }}</td>
+
             <td class="tcell">
               <form action="{{ url_for('compare') }}", method="POST">
                 <input type="text" name="student1" id="student1" value="{{ i[0] }}" hidden>
                 <input type="text" name="student2" id="student2" value="{{ i[1] }}" hidden>
-                <input type="submit" value="Compare" class="btn btn-outline-primary">
+                <input type="submit" value="Compare" class="btn btn-outline-primary compare">
               </form> 
             </td>
 
-            <td class="percentage">{{ i[2] }}</td>
+            
           </tr>
           {% endfor %}
 
