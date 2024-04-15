@@ -1,0 +1,4 @@
+void
+cout
+cin
+friend

@@ -1,0 +1,12 @@
+lambda
+elif
+def
+raise
+map
+in
+zip
+filter
+sorted
+range
+dict
+tuple

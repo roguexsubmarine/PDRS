@@ -10,8 +10,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 def calculate_similarity(p):
     print("checking similarity ...")
         
-    ext = ('.py', '.c', '.cpp', '.txt','.java','.html')
+    ext = ('.py', '.c', '.cpp', '.txt','.java','.html','.rs')
     lst=[]
+    prog_lst=[]
     file_names=[]
     #implement stopwords later
 
@@ -61,6 +62,7 @@ def calculate_similarity(p):
                     file_names.append(filename)
                     content = f.read()
                     lst.append(content)
+                    prog_lst.append(content)
             except UnicodeDecodeError:
                 print(f"UnicodeDecodeError: Unable to decode '{filename}'")
 
@@ -124,6 +126,55 @@ def calculate_similarity(p):
         # print(f"Similarity between vectors {index1} and {index2}: {similarity_score}")
         simlist.append([index1,index2,similarity_score])
         
+    
+    #top prog langs below, check for accuracy cuz im not sure
+    topkeywordslist=[]
+    def read_keyword_files(directory):
+        keyword_contents = {}
+        for filename in os.listdir(directory):
+            if filename.endswith('.txt'):
+                file_path = os.path.join(directory, filename)
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    lines = file.readlines()
+                    lines = [line.strip() for line in lines]
+                    file_name = os.path.splitext(filename)[0]
+                    keyword_contents[file_name] = lines
+        return keyword_contents
+    
+
+    keywords_folder = r'./keywords' #add path
+    check_list=prog_lst
+    keyword_contents = {}
+    for filename in os.listdir(keywords_folder):
+        if filename.endswith('.txt'):
+            file_path = os.path.join(keywords_folder, filename)
+            with open(file_path, 'r', encoding='utf-8') as file:
+                lines = file.readlines()
+                lines = [line.strip() for line in lines]
+                file_name = os.path.splitext(filename)[0]
+                keyword_contents[file_name] = lines
+
+    max_keywords_language = {}
+    for wrd in check_list:
+        max_keywords = 0
+        max_language = None
+        for language, keywords in keyword_contents.items():
+            keywords_found = sum(1 for keyword in keywords if keyword in wrd)
+            if keywords_found > max_keywords:
+                max_keywords = keywords_found
+                max_language = language
+        if max_language:
+            max_keywords_language[wrd] = max_language
+
+    topkeywordslist = []
+    for wrd, language in max_keywords_language.items():
+        topkeywordslist.append(language)
+        
+    from collections import Counter
+    counts=Counter(topkeywordslist)
+    toplang=counts.most_common(1)[0][0]
+    
+    #plots below from here, this is heatmap
     import matplotlib.pyplot as plt
     import seaborn as sns 
 
@@ -215,7 +266,7 @@ def calculate_similarity(p):
     
 
     # print(simlist)
-    return simlist, lst, plaghighest
+    return simlist, lst, plaghighest, toplang
 
 # p=input("Enter the directory path: ")
 
