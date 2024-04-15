@@ -1,4 +1,13 @@
 __pycache__/
 .venv/
 submissions/
+
+
+# files
 Sparsematrix.csv
+
+
+# images
+static/top50words.png
+static/similarityheatmap.png
+static/clustermap.png
