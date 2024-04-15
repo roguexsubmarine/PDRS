@@ -217,7 +217,7 @@ def extract():
 
 
             session['path_to_files'] = p
-            data,stmts,plag_highest=calculate_similarity(p)
+            data,stmts,plag_highest,top_lang=calculate_similarity(p)
 
 
             sorted_data = sorted(data, key=lambda x: x[2])
@@ -225,6 +225,7 @@ def extract():
             session['sorted_data'] = sorted_data
             session['stmts'] = stmts
             session['plag_highest'] = plag_highest
+            session['top_lang'] = top_lang
 
 
 
@@ -240,12 +241,15 @@ def extract():
 def result():
     data = session.get('sorted_data', None)
     plag_highest = session.get('plag_highest', None)
+    top_lang = session.get('top_lang',None)
     
 
     if data is None:
         return "Data not found. Please sort first."
     # print(data)
-    return render_template("report.html", data=data,plag_highest=plag_highest)
+
+    return render_template("report.html", data=data, plag_highest=plag_highest, top_lang=top_lang)
+
 
 @app.route("/list")
 def list():
