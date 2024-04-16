@@ -3,6 +3,8 @@ gunicorn
 flask-session
 jinja2
 requests
+python-docx
+nbformat
 numpy
 pandas
 scikit-learn
